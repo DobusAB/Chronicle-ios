@@ -155,52 +155,6 @@
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
-        <!--Page View Controller-->
-        <scene sceneID="ApY-dk-hJ6">
-            <objects>
-                <pageViewController storyboardIdentifier="PageController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="wL0-tR-UOi" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IXO-jU-Nc0" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-980" y="-734"/>
-        </scene>
-        <!--Page Item Controller-->
-        <scene sceneID="KOt-yF-uuk">
-            <objects>
-                <viewController storyboardIdentifier="ItemController" id="W9L-IK-cVl" customClass="PageItemController" customModule="Chronicle" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jnk-Rk-GUW"/>
-                        <viewControllerLayoutGuide type="bottom" id="ULG-Ez-4r4"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="nlq-38-c5m">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="88F-S0-S7k">
-                                <rect key="frame" x="140" y="140" width="320" height="320"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="320" id="8Gk-Hn-4KW"/>
-                                    <constraint firstAttribute="width" constant="320" id="ynK-f1-BI8"/>
-                                </constraints>
-                            </imageView>
-                        </subviews>
-                        <animations/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="centerY" secondItem="88F-S0-S7k" secondAttribute="centerY" id="5Tv-Bb-vZf"/>
-                            <constraint firstAttribute="centerX" secondItem="88F-S0-S7k" secondAttribute="centerX" id="dj2-9k-K6g"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="containerView" destination="nlq-38-c5m" id="mCu-bb-Yx7"/>
-                        <outlet property="contentImageView" destination="88F-S0-S7k" id="uie-jX-uCB"/>
-                        <outlet property="view" destination="nlq-38-c5m" id="cmG-Ev-f7b"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Xvq-Ud-Ohh" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-316" y="-734"/>
-        </scene>
     </scenes>
     <resources>
         <image name="facebook-icon" width="31" height="31"/>
