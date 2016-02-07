@@ -14,8 +14,7 @@
 		B1E5618D1C676C1E0034C491 /* ChronicleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E5618C1C676C1E0034C491 /* ChronicleTests.swift */; };
 		B1E561981C676C1E0034C491 /* ChronicleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E561971C676C1E0034C491 /* ChronicleUITests.swift */; };
 		B1E561AC1C676D860034C491 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E561AB1C676D860034C491 /* AuthViewController.swift */; };
-		B1E561B31C677E120034C491 /* PageItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E561B21C677E120034C491 /* PageItemController.swift */; };
-		D619929D84BD5A5784F2B3F3 /* libPods-Chronicle.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC70F4E781A8D72FDD5A49ED /* libPods-Chronicle.a */; };
+		CFF957EC30EF9D302291CCC2 /* Pods_Chronicle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46FA4654FBF9BEE378D87399 /* Pods_Chronicle.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +36,7 @@
 
 /* Begin PBXFileReference section */
 		23115E31E50E5B3F20E0138A /* Pods-Chronicle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chronicle.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chronicle/Pods-Chronicle.release.xcconfig"; sourceTree = "<group>"; };
+		46FA4654FBF9BEE378D87399 /* Pods_Chronicle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chronicle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		92FBA7DF35460F35A8BC7D1C /* Pods-Chronicle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chronicle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Chronicle/Pods-Chronicle.debug.xcconfig"; sourceTree = "<group>"; };
 		B1E561721C676C1E0034C491 /* Chronicle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chronicle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1E561751C676C1E0034C491 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -51,8 +51,6 @@
 		B1E561971C676C1E0034C491 /* ChronicleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChronicleUITests.swift; sourceTree = "<group>"; };
 		B1E561991C676C1E0034C491 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B1E561AB1C676D860034C491 /* AuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthViewController.swift; path = ../AuthViewController.swift; sourceTree = "<group>"; };
-		B1E561B21C677E120034C491 /* PageItemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageItemController.swift; path = ../PageItemController.swift; sourceTree = "<group>"; };
-		EC70F4E781A8D72FDD5A49ED /* libPods-Chronicle.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Chronicle.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D619929D84BD5A5784F2B3F3 /* libPods-Chronicle.a in Frameworks */,
+				CFF957EC30EF9D302291CCC2 /* Pods_Chronicle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,7 +82,7 @@
 		7590540A2BFFD12086CD35F7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EC70F4E781A8D72FDD5A49ED /* libPods-Chronicle.a */,
+				46FA4654FBF9BEE378D87399 /* Pods_Chronicle.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -344,7 +342,6 @@
 			files = (
 				B1E561AC1C676D860034C491 /* AuthViewController.swift in Sources */,
 				B1E561761C676C1E0034C491 /* AppDelegate.swift in Sources */,
-				B1E561B31C677E120034C491 /* PageItemController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

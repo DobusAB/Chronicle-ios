@@ -15,10 +15,7 @@ class AuthViewController: UIViewController {
     @IBOutlet weak var facebookButton: UIButton!
     var chronicleBlue = UIColor(red:0.25, green:0.52, blue:1.0, alpha:1.0)
     var facebookBlue = UIColor(red:0.23, green:0.35, blue:0.6, alpha:1.0)
-    
-    
 
-    
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,9 +38,19 @@ class AuthViewController: UIViewController {
     }
     
     @IBAction func authAction(sender: AnyObject) {
-        
-        
-        
+        let fbLoginManager = FBSDKLoginManager()
+        fbLoginManager.logInWithReadPermissions(["email", "public_profile"], fromViewController: self, handler: { (fbResult, error) -> Void in
+            if error == nil {
+                self.connectWithChronicle(fbResult)
+            } else {
+                //Error logging in
+                print (error)
+            }
+        })
+    }
+    
+    func connectWithChronicle(fbResult: FBSDKLoginManagerLoginResult) {
+        print(fbResult)
     }
 
     /*
