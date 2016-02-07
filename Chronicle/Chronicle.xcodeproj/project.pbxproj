@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		559D83981C6783DB003634D0 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 559D83951C6783DB003634D0 /* FBSDKCoreKit.framework */; };
+		559D83991C6783DB003634D0 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 559D83961C6783DB003634D0 /* FBSDKLoginKit.framework */; };
+		559D839A1C6783DB003634D0 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 559D83971C6783DB003634D0 /* FBSDKShareKit.framework */; };
 		B1E561761C676C1E0034C491 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E561751C676C1E0034C491 /* AppDelegate.swift */; };
 		B1E561781C676C1E0034C491 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E561771C676C1E0034C491 /* FirstViewController.swift */; };
 		B1E5617A1C676C1E0034C491 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E561791C676C1E0034C491 /* SecondViewController.swift */; };
@@ -37,6 +40,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		559D83951C6783DB003634D0 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "../../../../Documents/FacebookSDKs-iOS-20160115/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
+		559D83961C6783DB003634D0 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "../../../../Documents/FacebookSDKs-iOS-20160115/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
+		559D83971C6783DB003634D0 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = "../../../../Documents/FacebookSDKs-iOS-20160115/FBSDKShareKit.framework"; sourceTree = "<group>"; };
 		B1E561721C676C1E0034C491 /* Chronicle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chronicle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1E561751C676C1E0034C491 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1E561771C676C1E0034C491 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +66,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				559D83981C6783DB003634D0 /* FBSDKCoreKit.framework in Frameworks */,
+				559D83991C6783DB003634D0 /* FBSDKLoginKit.framework in Frameworks */,
+				559D839A1C6783DB003634D0 /* FBSDKShareKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +92,9 @@
 		B1E561691C676C1E0034C491 = {
 			isa = PBXGroup;
 			children = (
+				559D83951C6783DB003634D0 /* FBSDKCoreKit.framework */,
+				559D83961C6783DB003634D0 /* FBSDKLoginKit.framework */,
+				559D83971C6783DB003634D0 /* FBSDKShareKit.framework */,
 				B1E561741C676C1E0034C491 /* Chronicle */,
 				B1E5618B1C676C1E0034C491 /* ChronicleTests */,
 				B1E561961C676C1E0034C491 /* ChronicleUITests */,
@@ -505,6 +517,7 @@
 				B1E5619E1C676C1E0034C491 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B1E5619F1C676C1E0034C491 /* Build configuration list for PBXNativeTarget "ChronicleTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +526,7 @@
 				B1E561A11C676C1E0034C491 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B1E561A21C676C1E0034C491 /* Build configuration list for PBXNativeTarget "ChronicleUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +535,7 @@
 				B1E561A41C676C1E0034C491 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
