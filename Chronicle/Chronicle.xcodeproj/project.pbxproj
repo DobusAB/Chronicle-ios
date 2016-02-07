@@ -155,7 +155,6 @@
 			isa = PBXGroup;
 			children = (
 				B1E561AB1C676D860034C491 /* AuthViewController.swift */,
-				B1E561B21C677E120034C491 /* PageItemController.swift */,
 			);
 			name = Auth;
 			sourceTree = "<group>";
