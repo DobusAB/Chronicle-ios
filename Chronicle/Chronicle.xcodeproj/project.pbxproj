@@ -14,6 +14,7 @@
 		B1E5618D1C676C1E0034C491 /* ChronicleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E5618C1C676C1E0034C491 /* ChronicleTests.swift */; };
 		B1E561981C676C1E0034C491 /* ChronicleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E561971C676C1E0034C491 /* ChronicleUITests.swift */; };
 		B1E561AC1C676D860034C491 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E561AB1C676D860034C491 /* AuthViewController.swift */; };
+		B1E561B31C677E120034C491 /* PageItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E561B21C677E120034C491 /* PageItemController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		B1E561971C676C1E0034C491 /* ChronicleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChronicleUITests.swift; sourceTree = "<group>"; };
 		B1E561991C676C1E0034C491 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B1E561AB1C676D860034C491 /* AuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthViewController.swift; path = ../AuthViewController.swift; sourceTree = "<group>"; };
+		B1E561B21C677E120034C491 /* PageItemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageItemController.swift; path = ../PageItemController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				B1E561AB1C676D860034C491 /* AuthViewController.swift */,
+				B1E561B21C677E120034C491 /* PageItemController.swift */,
 			);
 			name = Auth;
 			sourceTree = "<group>";
@@ -267,6 +270,8 @@
 			files = (
 				B1E561AC1C676D860034C491 /* AuthViewController.swift in Sources */,
 				B1E561761C676C1E0034C491 /* AppDelegate.swift in Sources */,
+				B1E561781C676C1E0034C491 /* FirstViewController.swift in Sources */,
+				B1E561B31C677E120034C491 /* PageItemController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
