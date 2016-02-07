@@ -104,6 +104,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="auth-bg" translatesAutoresizingMaskIntoConstraints="NO" id="cue-Va-HFg">
+                                <rect key="frame" x="0.0" y="280" width="600" height="320"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="320" id="LZR-NA-fdV"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cRh-t1-hOw">
                                 <rect key="frame" x="50" y="500" width="500" height="60"/>
                                 <animations/>
@@ -118,14 +125,45 @@
                                     <action selector="authAction:" destination="I8n-WH-Z3D" eventType="touchUpInside" id="ii8-0I-yd5"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Chronicle." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ucc-gt-oQq">
+                                <rect key="frame" x="70" y="120" width="460" height="23"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chronicle helps you discover discover our heritage, sign in to get started." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q4G-Qx-qIp">
+                                <rect key="frame" x="40" y="163" width="520" height="41"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" red="0.99980489340304834" green="0.9868757225392476" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="q4G-Qx-qIp" secondAttribute="trailing" constant="20" id="8NO-sP-CSe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ucc-gt-oQq" secondAttribute="trailing" constant="50" id="8u0-FR-W6h"/>
+                            <constraint firstItem="cue-Va-HFg" firstAttribute="leading" secondItem="CFG-Af-1it" secondAttribute="leading" id="KUx-L9-Jut"/>
+                            <constraint firstItem="Ucc-gt-oQq" firstAttribute="top" secondItem="HZO-TL-8Zy" secondAttribute="bottom" constant="100" id="KxB-HR-4N8"/>
+                            <constraint firstItem="q4G-Qx-qIp" firstAttribute="top" secondItem="Ucc-gt-oQq" secondAttribute="bottom" constant="20" id="Plc-Ex-CUb"/>
+                            <constraint firstItem="cue-Va-HFg" firstAttribute="top" secondItem="HZO-TL-8Zy" secondAttribute="bottom" constant="200" id="V9B-8G-JAY"/>
+                            <constraint firstItem="q4G-Qx-qIp" firstAttribute="leading" secondItem="CFG-Af-1it" secondAttribute="leadingMargin" constant="20" id="YAI-Vp-o6w"/>
                             <constraint firstItem="cRh-t1-hOw" firstAttribute="leading" secondItem="CFG-Af-1it" secondAttribute="leadingMargin" constant="30" id="dJL-NF-iII"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cRh-t1-hOw" secondAttribute="trailing" constant="30" id="m3s-2L-H5a"/>
+                            <constraint firstAttribute="trailing" secondItem="cue-Va-HFg" secondAttribute="trailing" id="vFB-uS-uD2"/>
                             <constraint firstItem="tWV-PW-ddj" firstAttribute="top" secondItem="cRh-t1-hOw" secondAttribute="bottom" constant="40" id="vVb-g1-pVr"/>
+                            <constraint firstItem="tWV-PW-ddj" firstAttribute="top" secondItem="cue-Va-HFg" secondAttribute="bottom" id="wmr-kU-5Hs"/>
+                            <constraint firstItem="cue-Va-HFg" firstAttribute="top" secondItem="q4G-Qx-qIp" secondAttribute="bottom" constant="100" id="x7A-jU-XvM"/>
+                            <constraint firstItem="Ucc-gt-oQq" firstAttribute="leading" secondItem="CFG-Af-1it" secondAttribute="leadingMargin" constant="50" id="xR9-c8-Pz2"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="V9B-8G-JAY"/>
+                                <exclude reference="x7A-jU-XvM"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="facebookButton" destination="cRh-t1-hOw" id="xPG-Ie-CSj"/>
@@ -157,6 +195,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="auth-bg" width="375" height="358"/>
         <image name="facebook-icon" width="31" height="31"/>
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
