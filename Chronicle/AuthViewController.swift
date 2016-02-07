@@ -19,18 +19,19 @@ class AuthViewController: UIViewController {
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        if (FBSDKAccessToken.currentAccessToken() != nil) {
+            print("Already logged in")
+        } else {
+            print("Please login")
+        }
     }
-    
-    
     
     override func viewWillAppear(animated: Bool) {
         view.backgroundColor = chronicleBlue
         facebookButton.backgroundColor = facebookBlue
         facebookButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
         facebookButton.layer.cornerRadius = 4
-        
     }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -50,7 +51,7 @@ class AuthViewController: UIViewController {
     }
     
     func connectWithChronicle(fbResult: FBSDKLoginManagerLoginResult) {
-        print(fbResult)
+        print(fbResult.token.tokenString)
     }
 
     /*
