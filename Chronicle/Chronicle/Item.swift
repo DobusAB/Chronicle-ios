@@ -16,8 +16,9 @@ class Item: Object {
     dynamic var thumbnail: String = ""
     dynamic var itemType: String = ""
     dynamic var itemDescription: String = ""
-    dynamic var lat: String = ""
-    dynamic var lng: String = ""
+    dynamic var lat: Double = 0.0
+    dynamic var lng: Double = 0.0
+    
     //dynamic var itemDescription: String = ""
 
     /*override static func primaryKey() -> String {

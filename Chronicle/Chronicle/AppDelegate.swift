@@ -7,17 +7,36 @@
 //
 
 import UIKit
+import CoreLocation
 import FBSDKCoreKit
 import AEXML
 import RealmSwift
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
+class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
     var window: UIWindow?
+    var locationManager = CLLocationManager()
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        //Ask user for push permission
+        if application.respondsToSelector("registerUserNotificationSettings:") {
+            let userNotificationTypes: UIUserNotificationType = [UIUserNotificationType.Alert, UIUserNotificationType.Badge, UIUserNotificationType.Sound]
+            let settings = UIUserNotificationSettings(forTypes: userNotificationTypes, categories: nil)
+            application.registerUserNotificationSettings(settings)
+            application.registerForRemoteNotifications()
+        } else {
+            application.registerForRemoteNotificationTypes([.Badge, .Sound, .Alert])
+        }
+        
+        //Ask for permission to read user location
+        locationManager.requestAlwaysAuthorization()
+        locationManager.delegate = self
+        locationManager.startUpdatingLocation()
+        var cl = CLLocationCoordinate2D(latitude: 56.673362789041626, longitude: 12.821966693123143)
+        var region = CLCircularRegion(center: cl, radius: 20000, identifier: "regionOne")
+        locationManager.startMonitoringForRegion(region)
+        
        let config = Realm.Configuration(
             // Set the new schema version. This must be greater than the previously used
             // version (if you've never set a schema version before, the version is 0).
@@ -54,7 +73,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             var count: Int = 0
             for dog in xmlDoc.root["records"]["record"].all! {
                 list.append(dog);
-                print(count)
+                //print(count)
                 count++
             }
             
@@ -79,10 +98,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                             item.itemDescription = rec.stringValue
                         }
                         if attr == "lon" {
-                            item.lng = rec.stringValue
+                            item.lng = rec.doubleValue
                         }
                         if attr == "lat" {
-                            item.lat = rec.stringValue
+                            item.lat = rec.doubleValue
                         }
                     }
                 }
@@ -105,11 +124,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //Lets see if stored
         let realm = try! Realm()
         let items = realm.objects(Item)
-        print(items)
+        //print(items)
         
         return true
     }
-
+    
+    func handleRegionEvent(region: CLRegion!) {
+        print("Geofence triggered!")
+    }
+    
+    func locationManager(manager: CLLocationManager, didEnterRegion region: CLRegion!) {
+        if region is CLCircularRegion {
+            handleRegionEvent(region)
+        }
+    }
+    
+    func locationManager(manager: CLLocationManager, didExitRegion region: CLRegion!) {
+        if region is CLCircularRegion {
+            handleRegionEvent(region)
+        }
+    }
+    
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
