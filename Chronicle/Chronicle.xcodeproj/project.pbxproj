@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5584A38F1C81F25D00494732 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584A38E1C81F25D00494732 /* Item.swift */; };
+		55A726881C81E20300C52517 /* data1.xml in Resources */ = {isa = PBXBuildFile; fileRef = 55A726871C81E20300C52517 /* data1.xml */; };
 		B1E561761C676C1E0034C491 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E561751C676C1E0034C491 /* AppDelegate.swift */; };
 		B1E5617D1C676C1E0034C491 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1E5617B1C676C1E0034C491 /* Main.storyboard */; };
 		B1E5617F1C676C1E0034C491 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1E5617E1C676C1E0034C491 /* Assets.xcassets */; };
@@ -37,6 +39,8 @@
 /* Begin PBXFileReference section */
 		23115E31E50E5B3F20E0138A /* Pods-Chronicle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chronicle.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chronicle/Pods-Chronicle.release.xcconfig"; sourceTree = "<group>"; };
 		46FA4654FBF9BEE378D87399 /* Pods_Chronicle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chronicle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5584A38E1C81F25D00494732 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		55A726871C81E20300C52517 /* data1.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = data1.xml; sourceTree = "<group>"; };
 		92FBA7DF35460F35A8BC7D1C /* Pods-Chronicle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chronicle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Chronicle/Pods-Chronicle.debug.xcconfig"; sourceTree = "<group>"; };
 		B1E561721C676C1E0034C491 /* Chronicle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chronicle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1E561751C676C1E0034C491 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +83,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5584A38D1C81F24400494732 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5584A38E1C81F25D00494732 /* Item.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		7590540A2BFFD12086CD35F7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,12 +133,14 @@
 		B1E561741C676C1E0034C491 /* Chronicle */ = {
 			isa = PBXGroup;
 			children = (
+				5584A38D1C81F24400494732 /* Model */,
 				B1E561751C676C1E0034C491 /* AppDelegate.swift */,
 				B1E561AD1C676E050034C491 /* Auth */,
 				B1E5617B1C676C1E0034C491 /* Main.storyboard */,
 				B1E5617E1C676C1E0034C491 /* Assets.xcassets */,
 				B1E561801C676C1E0034C491 /* LaunchScreen.storyboard */,
 				B1E561831C676C1E0034C491 /* Info.plist */,
+				55A726871C81E20300C52517 /* data1.xml */,
 			);
 			path = Chronicle;
 			sourceTree = "<group>";
@@ -268,6 +282,7 @@
 				B1E561821C676C1E0034C491 /* LaunchScreen.storyboard in Resources */,
 				B1E5617F1C676C1E0034C491 /* Assets.xcassets in Resources */,
 				B1E5617D1C676C1E0034C491 /* Main.storyboard in Resources */,
+				55A726881C81E20300C52517 /* data1.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +356,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1E561AC1C676D860034C491 /* AuthViewController.swift in Sources */,
+				5584A38F1C81F25D00494732 /* Item.swift in Sources */,
 				B1E561761C676C1E0034C491 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
