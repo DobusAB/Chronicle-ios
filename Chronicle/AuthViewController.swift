@@ -52,6 +52,7 @@ class AuthViewController: UIViewController {
     
     func connectWithChronicle(fbResult: FBSDKLoginManagerLoginResult) {
         print(fbResult.token.tokenString)
+        //
     }
 
     /*
