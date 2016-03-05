@@ -211,6 +211,9 @@
                                         <state key="normal" title="Aktivera bot">
                                             <color key="titleColor" red="0.98714364600000004" green="1" blue="0.98272162360000004" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="saveUser:" destination="R6i-aX-6P6" eventType="touchUpInside" id="FL1-3C-vLW"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
