@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class SetupViewController: UIViewController {
 
     @IBOutlet weak var setupButton: UIButton!
@@ -15,11 +16,14 @@ class SetupViewController: UIViewController {
     @IBOutlet weak var shadowImage: UIImageView!
     @IBOutlet weak var nameInput: UITextField!
     @IBOutlet weak var inputLabel: UILabel!
+    @IBOutlet weak var botFaceImage: UIImageView!
+    @IBOutlet weak var addProfileImageButton: UIButton!
+    
+
     
     override func viewWillAppear(animated: Bool) {
         
         var botOriginalY = botImage.frame.origin.y
-        print(botOriginalY)
         view.backgroundColor = UIColor(red:0.98, green:0.98, blue:0.98, alpha:1.0)
         setupButton.backgroundColor = UIColor(red:0.32, green:0.62, blue:1.00, alpha:1.0)
         setupButton.layer.zPosition = 1
@@ -38,17 +42,25 @@ class SetupViewController: UIViewController {
         border.borderWidth = width
         nameInput.layer.addSublayer(border)
         nameInput.layer.masksToBounds = true
+    
         
         UIView.animateWithDuration(1.0, delay:0, options: [.Repeat, .Autoreverse], animations: {
             
             self.botImage.layer.position.y = botOriginalY + 90
+            self.botFaceImage.layer.position.y = botOriginalY + 38
             self.shadowImage.transform = CGAffineTransformMakeScale(0.9, 0.9)
             
             }, completion: nil)
         
         // Do any additional setup after loading the view.
     }
+
    
+    @IBAction func addProfileImage(sender: AnyObject) {
+        
+        
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,7 +80,7 @@ class SetupViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
 
     /*
     // MARK: - Navigation

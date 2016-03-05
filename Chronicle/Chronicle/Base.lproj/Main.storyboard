@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="I8n-WH-Z3D">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="R6i-aX-6P6">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -235,8 +235,17 @@
                                     <constraint firstAttribute="width" constant="125" id="pgI-dz-ZlN"/>
                                 </constraints>
                             </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ditt namn" textAlignment="center" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="f9m-yR-gAF">
+                                <rect key="frame" x="205" y="95" width="190" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="190" id="Bsg-Wj-xsh"/>
+                                    <constraint firstAttribute="height" constant="40" id="c7x-1C-qXM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vad heter din bot?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4jg-vq-Y3t">
-                                <rect key="frame" x="225" y="70" width="150" height="35"/>
+                                <rect key="frame" x="225" y="45" width="150" height="35"/>
                                 <color key="backgroundColor" red="0.0" green="0.26446752420000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="6vf-bS-uhR"/>
@@ -246,26 +255,39 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ditt namn" textAlignment="center" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="f9m-yR-gAF">
-                                <rect key="frame" x="205" y="120" width="190" height="40"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bot_face" translatesAutoresizingMaskIntoConstraints="NO" id="jTr-fz-MRd">
+                                <rect key="frame" x="265" y="185" width="70" height="70"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="190" id="Bsg-Wj-xsh"/>
-                                    <constraint firstAttribute="height" constant="40" id="c7x-1C-qXM"/>
+                                    <constraint firstAttribute="height" constant="70" id="b1i-vx-LRI"/>
+                                    <constraint firstAttribute="width" constant="70" id="edk-xR-m0g"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
-                            </textField>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R4t-QY-Sdb">
+                                <rect key="frame" x="238" y="190" width="125" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="5Fs-dY-IBv"/>
+                                    <constraint firstAttribute="width" constant="125" id="hWX-ub-oRt"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="addProfileImage:" destination="R6i-aX-6P6" eventType="touchUpInside" id="Cug-6y-vZg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="jTr-fz-MRd" firstAttribute="top" secondItem="shb-x8-Ian" secondAttribute="bottom" id="34D-0I-iPM"/>
+                            <constraint firstItem="jTr-fz-MRd" firstAttribute="centerX" secondItem="shb-x8-Ian" secondAttribute="centerX" id="4h1-rk-QE7"/>
                             <constraint firstItem="wmb-8O-kEd" firstAttribute="top" secondItem="WxR-c5-rjP" secondAttribute="top" id="6NF-oX-uLL"/>
                             <constraint firstItem="shb-x8-Ian" firstAttribute="leading" secondItem="MK6-j5-A4J" secondAttribute="trailing" id="ArF-jn-zjl"/>
                             <constraint firstItem="wmb-8O-kEd" firstAttribute="leading" secondItem="MK6-j5-A4J" secondAttribute="trailing" id="DUK-AY-dH3"/>
                             <constraint firstAttribute="trailing" secondItem="MK6-j5-A4J" secondAttribute="trailing" id="GLs-3V-7b8"/>
                             <constraint firstAttribute="trailing" secondItem="wmb-8O-kEd" secondAttribute="trailing" id="GX4-gt-7MP"/>
+                            <constraint firstItem="jTr-fz-MRd" firstAttribute="centerX" secondItem="WxR-c5-rjP" secondAttribute="centerX" id="LPa-RD-m7Y"/>
+                            <constraint firstItem="jTr-fz-MRd" firstAttribute="top" secondItem="shb-x8-Ian" secondAttribute="top" constant="35" id="MNJ-6m-hWa"/>
                             <constraint firstItem="shb-x8-Ian" firstAttribute="centerX" secondItem="WxR-c5-rjP" secondAttribute="centerX" id="NDm-2I-vG2"/>
                             <constraint firstItem="wmb-8O-kEd" firstAttribute="leading" secondItem="WxR-c5-rjP" secondAttribute="leading" id="NHv-Av-emk"/>
-                            <constraint firstItem="4jg-vq-Y3t" firstAttribute="top" secondItem="QXd-fM-dq0" secondAttribute="bottom" constant="50" id="RIy-7s-UDg"/>
+                            <constraint firstItem="4jg-vq-Y3t" firstAttribute="top" secondItem="QXd-fM-dq0" secondAttribute="bottom" constant="25" id="RIy-7s-UDg"/>
+                            <constraint firstItem="R4t-QY-Sdb" firstAttribute="centerX" secondItem="jTr-fz-MRd" secondAttribute="centerX" id="RiB-fL-FWS"/>
                             <constraint firstItem="f9m-yR-gAF" firstAttribute="top" secondItem="4jg-vq-Y3t" secondAttribute="bottom" constant="15" id="V18-CB-CpJ"/>
                             <constraint firstItem="bHI-TH-wnK" firstAttribute="top" secondItem="shb-x8-Ian" secondAttribute="bottom" constant="210" id="YWs-pz-d12"/>
                             <constraint firstItem="f4B-WX-3CJ" firstAttribute="top" secondItem="shb-x8-Ian" secondAttribute="bottom" constant="10" id="ZEw-25-IQm"/>
@@ -281,6 +303,7 @@
                             <constraint firstItem="f9m-yR-gAF" firstAttribute="top" secondItem="QXd-fM-dq0" secondAttribute="bottom" constant="50" id="oIH-EJ-DYp"/>
                             <constraint firstItem="f4B-WX-3CJ" firstAttribute="centerX" secondItem="WxR-c5-rjP" secondAttribute="centerX" id="ooV-IN-Wls"/>
                             <constraint firstItem="wmb-8O-kEd" firstAttribute="top" secondItem="shb-x8-Ian" secondAttribute="bottom" id="ueY-hI-qOo"/>
+                            <constraint firstItem="R4t-QY-Sdb" firstAttribute="centerY" secondItem="jTr-fz-MRd" secondAttribute="centerY" constant="20" id="zdh-Tp-GX5"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -290,10 +313,14 @@
                                 <exclude reference="ArF-jn-zjl"/>
                                 <exclude reference="iRs-9C-ELd"/>
                                 <exclude reference="mAY-ty-BqV"/>
+                                <exclude reference="34D-0I-iPM"/>
+                                <exclude reference="4h1-rk-QE7"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="addProfileImageButton" destination="R4t-QY-Sdb" id="yuz-9H-IcX"/>
+                        <outlet property="botFaceImage" destination="jTr-fz-MRd" id="YU6-tB-Gr7"/>
                         <outlet property="botImage" destination="shb-x8-Ian" id="8dl-p9-G73"/>
                         <outlet property="inputLabel" destination="4jg-vq-Y3t" id="fzQ-te-fuN"/>
                         <outlet property="nameInput" destination="f9m-yR-gAF" id="Uhv-vX-XqW"/>
@@ -309,6 +336,7 @@
     <resources>
         <image name="bg_auth" width="375" height="667"/>
         <image name="bot_auth" width="359" height="364"/>
+        <image name="bot_face" width="58" height="58"/>
         <image name="bot_setup" width="120" height="180"/>
         <image name="bot_setup_shadow" width="90" height="12"/>
         <image name="first" width="30" height="30"/>
