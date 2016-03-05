@@ -247,12 +247,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ditt namn" textAlignment="center" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="f9m-yR-gAF">
-                                <rect key="frame" x="215" y="120" width="170" height="40"/>
+                                <rect key="frame" x="205" y="120" width="190" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="170" id="Bsg-Wj-xsh"/>
+                                    <constraint firstAttribute="width" constant="190" id="Bsg-Wj-xsh"/>
                                     <constraint firstAttribute="height" constant="40" id="c7x-1C-qXM"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                             </textField>
                         </subviews>

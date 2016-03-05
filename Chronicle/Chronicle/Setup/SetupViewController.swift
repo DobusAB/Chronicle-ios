@@ -26,7 +26,7 @@ class SetupViewController: UIViewController {
         setupButton.layer.shadowColor = UIColor.blackColor().CGColor
         setupButton.layer.shadowOffset = CGSizeMake(0, -3)
         setupButton.layer.shadowRadius = 4
-        setupButton.layer.shadowOpacity = 0.4
+        setupButton.layer.shadowOpacity = 0.2
         inputLabel.layer.cornerRadius = 17;
         inputLabel.clipsToBounds = true;
         inputLabel.backgroundColor = UIColor(red:0.32, green:0.62, blue:1.00, alpha:1.0)
