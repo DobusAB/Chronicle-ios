@@ -104,10 +104,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="acT-r1-nCt">
-                                <rect key="frame" x="0.0" y="535" width="600" height="65"/>
+                                <rect key="frame" x="0.0" y="540" width="600" height="60"/>
                                 <color key="backgroundColor" red="0.0" green="0.26446752420000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="65" id="SS4-FU-LMi"/>
+                                    <constraint firstAttribute="height" constant="60" id="SS4-FU-LMi"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                 <state key="normal" title="Påbörja ditt äventyr">
@@ -187,36 +187,118 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oio-fQ-LLO">
-                                <rect key="frame" x="0.0" y="535" width="600" height="65"/>
-                                <color key="backgroundColor" red="0.0" green="0.26446752420000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="65" id="JTV-Z9-Lib"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
-                                <state key="normal" title="Aktivera bot">
-                                    <color key="titleColor" red="0.98714364600000004" green="1" blue="0.98272162360000004" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_auth" translatesAutoresizingMaskIntoConstraints="NO" id="wmb-8O-kEd">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="nOe-aN-EHH"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="nOe-aN-EHH"/>
+                                    </mask>
+                                </variation>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MK6-j5-A4J">
+                                <rect key="frame" x="0.0" y="370" width="600" height="230"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oio-fQ-LLO">
+                                        <rect key="frame" x="0.0" y="170" width="600" height="60"/>
+                                        <color key="backgroundColor" red="0.0" green="0.26446752420000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="JTV-Z9-Lib"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                        <state key="normal" title="Aktivera bot">
+                                            <color key="titleColor" red="0.98714364600000004" green="1" blue="0.98272162360000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Oio-fQ-LLO" firstAttribute="leading" secondItem="MK6-j5-A4J" secondAttribute="leading" id="7DQ-7M-ejM"/>
+                                    <constraint firstAttribute="bottom" secondItem="Oio-fQ-LLO" secondAttribute="bottom" id="GRe-vV-GJe"/>
+                                    <constraint firstAttribute="height" constant="230" id="PWz-q0-2DU"/>
+                                    <constraint firstAttribute="trailing" secondItem="Oio-fQ-LLO" secondAttribute="trailing" id="rvO-cu-30d"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bot_setup_shadow" translatesAutoresizingMaskIntoConstraints="NO" id="f4B-WX-3CJ">
+                                <rect key="frame" x="250" y="400" width="100" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="dD7-o5-2Js"/>
+                                    <constraint firstAttribute="height" constant="20" id="qRJ-y4-0FW"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bot_setup" translatesAutoresizingMaskIntoConstraints="NO" id="shb-x8-Ian">
+                                <rect key="frame" x="238" y="150" width="125" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="OwY-na-tym"/>
+                                    <constraint firstAttribute="width" constant="125" id="pgI-dz-ZlN"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vad heter din bot?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4jg-vq-Y3t">
+                                <rect key="frame" x="225" y="70" width="150" height="35"/>
+                                <color key="backgroundColor" red="0.0" green="0.26446752420000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="6vf-bS-uhR"/>
+                                    <constraint firstAttribute="height" constant="35" id="aP5-aC-Z4g"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ditt namn" textAlignment="center" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="f9m-yR-gAF">
+                                <rect key="frame" x="215" y="120" width="170" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="170" id="Bsg-Wj-xsh"/>
+                                    <constraint firstAttribute="height" constant="40" id="c7x-1C-qXM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wmb-8O-kEd" firstAttribute="top" secondItem="WxR-c5-rjP" secondAttribute="top" id="6NF-oX-uLL"/>
-                            <constraint firstAttribute="trailing" secondItem="Oio-fQ-LLO" secondAttribute="trailing" id="9cv-os-rXE"/>
+                            <constraint firstItem="shb-x8-Ian" firstAttribute="leading" secondItem="MK6-j5-A4J" secondAttribute="trailing" id="ArF-jn-zjl"/>
+                            <constraint firstItem="wmb-8O-kEd" firstAttribute="leading" secondItem="MK6-j5-A4J" secondAttribute="trailing" id="DUK-AY-dH3"/>
+                            <constraint firstAttribute="trailing" secondItem="MK6-j5-A4J" secondAttribute="trailing" id="GLs-3V-7b8"/>
                             <constraint firstAttribute="trailing" secondItem="wmb-8O-kEd" secondAttribute="trailing" id="GX4-gt-7MP"/>
-                            <constraint firstItem="bHI-TH-wnK" firstAttribute="top" secondItem="Oio-fQ-LLO" secondAttribute="bottom" id="GYc-up-PDw"/>
+                            <constraint firstItem="shb-x8-Ian" firstAttribute="centerX" secondItem="WxR-c5-rjP" secondAttribute="centerX" id="NDm-2I-vG2"/>
                             <constraint firstItem="wmb-8O-kEd" firstAttribute="leading" secondItem="WxR-c5-rjP" secondAttribute="leading" id="NHv-Av-emk"/>
-                            <constraint firstItem="Oio-fQ-LLO" firstAttribute="leading" secondItem="WxR-c5-rjP" secondAttribute="leading" id="Q03-JY-LqU"/>
+                            <constraint firstItem="4jg-vq-Y3t" firstAttribute="top" secondItem="QXd-fM-dq0" secondAttribute="bottom" constant="50" id="RIy-7s-UDg"/>
+                            <constraint firstItem="f9m-yR-gAF" firstAttribute="top" secondItem="4jg-vq-Y3t" secondAttribute="bottom" constant="15" id="V18-CB-CpJ"/>
+                            <constraint firstItem="bHI-TH-wnK" firstAttribute="top" secondItem="shb-x8-Ian" secondAttribute="bottom" constant="210" id="YWs-pz-d12"/>
+                            <constraint firstItem="f4B-WX-3CJ" firstAttribute="top" secondItem="shb-x8-Ian" secondAttribute="bottom" constant="10" id="ZEw-25-IQm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="MK6-j5-A4J" secondAttribute="trailing" id="aeg-zH-Uts"/>
+                            <constraint firstItem="f9m-yR-gAF" firstAttribute="centerX" secondItem="WxR-c5-rjP" secondAttribute="centerX" id="aoK-ZI-Nd5"/>
+                            <constraint firstItem="f4B-WX-3CJ" firstAttribute="top" secondItem="wmb-8O-kEd" secondAttribute="bottom" id="cpw-tQ-T2K"/>
+                            <constraint firstItem="bHI-TH-wnK" firstAttribute="top" secondItem="MK6-j5-A4J" secondAttribute="bottom" id="fE8-b2-hVa"/>
+                            <constraint firstItem="shb-x8-Ian" firstAttribute="bottom" secondItem="wmb-8O-kEd" secondAttribute="bottom" id="iRs-9C-ELd"/>
+                            <constraint firstAttribute="trailing" secondItem="MK6-j5-A4J" secondAttribute="trailing" id="lMw-zx-F5w"/>
+                            <constraint firstItem="MK6-j5-A4J" firstAttribute="leading" secondItem="WxR-c5-rjP" secondAttribute="leading" id="lkg-RN-sra"/>
+                            <constraint firstItem="shb-x8-Ian" firstAttribute="top" secondItem="wmb-8O-kEd" secondAttribute="bottom" id="mAY-ty-BqV"/>
+                            <constraint firstItem="4jg-vq-Y3t" firstAttribute="centerX" secondItem="WxR-c5-rjP" secondAttribute="centerX" id="mZ1-Rw-zg4"/>
+                            <constraint firstItem="f9m-yR-gAF" firstAttribute="top" secondItem="QXd-fM-dq0" secondAttribute="bottom" constant="50" id="oIH-EJ-DYp"/>
+                            <constraint firstItem="f4B-WX-3CJ" firstAttribute="centerX" secondItem="WxR-c5-rjP" secondAttribute="centerX" id="ooV-IN-Wls"/>
+                            <constraint firstItem="wmb-8O-kEd" firstAttribute="top" secondItem="shb-x8-Ian" secondAttribute="bottom" id="ueY-hI-qOo"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="DUK-AY-dH3"/>
+                                <exclude reference="ueY-hI-qOo"/>
+                                <exclude reference="oIH-EJ-DYp"/>
+                                <exclude reference="ArF-jn-zjl"/>
+                                <exclude reference="iRs-9C-ELd"/>
+                                <exclude reference="mAY-ty-BqV"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
+                        <outlet property="botImage" destination="shb-x8-Ian" id="8dl-p9-G73"/>
+                        <outlet property="inputLabel" destination="4jg-vq-Y3t" id="fzQ-te-fuN"/>
+                        <outlet property="nameInput" destination="f9m-yR-gAF" id="Uhv-vX-XqW"/>
                         <outlet property="setupButton" destination="Oio-fQ-LLO" id="xcQ-BI-mpx"/>
+                        <outlet property="shadowImage" destination="f4B-WX-3CJ" id="1q8-FB-SLG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CDp-lh-XJP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -227,6 +309,8 @@
     <resources>
         <image name="bg_auth" width="375" height="667"/>
         <image name="bot_auth" width="359" height="364"/>
+        <image name="bot_setup" width="120" height="180"/>
+        <image name="bot_setup_shadow" width="90" height="12"/>
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>
