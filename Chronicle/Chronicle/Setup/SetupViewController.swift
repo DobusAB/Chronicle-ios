@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import MobileCoreServices
 
 
-class SetupViewController: UIViewController {
+class SetupViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var setupButton: UIButton!
     @IBOutlet weak var botImage: UIImageView!
@@ -19,11 +20,12 @@ class SetupViewController: UIViewController {
     @IBOutlet weak var botFaceImage: UIImageView!
     @IBOutlet weak var addProfileImageButton: UIButton!
     
+    let imagePicker = UIImagePickerController()
 
     
     override func viewWillAppear(animated: Bool) {
         
-        var botOriginalY = botImage.frame.origin.y
+        let botOriginalY = botImage.frame.origin.y
         view.backgroundColor = UIColor(red:0.98, green:0.98, blue:0.98, alpha:1.0)
         setupButton.backgroundColor = UIColor(red:0.32, green:0.62, blue:1.00, alpha:1.0)
         setupButton.layer.zPosition = 1
@@ -38,11 +40,13 @@ class SetupViewController: UIViewController {
         let width = CGFloat(2.0)
         border.borderColor = UIColor.darkGrayColor().CGColor
         border.frame = CGRect(x: 0, y: nameInput.frame.size.height - width, width:  nameInput.frame.size.width, height: nameInput.frame.size.height)
-        
         border.borderWidth = width
         nameInput.layer.addSublayer(border)
         nameInput.layer.masksToBounds = true
-    
+        botFaceImage.layer.cornerRadius = botFaceImage.frame.size.width/2
+        botFaceImage.clipsToBounds = true
+        botFaceImage.layer.borderColor = UIColor.blackColor().CGColor
+        botFaceImage.layer.borderWidth = 5.0
         
         UIView.animateWithDuration(1.0, delay:0, options: [.Repeat, .Autoreverse], animations: {
             
@@ -52,33 +56,49 @@ class SetupViewController: UIViewController {
             
             }, completion: nil)
         
-        // Do any additional setup after loading the view.
     }
 
-   
-    @IBAction func addProfileImage(sender: AnyObject) {
-        
-        
-        
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //Looks for single or multiple taps.
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
     }
     
-    //Calls this function when the tap is recognized.
+    
+    @IBAction func addProfileImage(sender: AnyObject) {
+        
+        print("Let's change your profile-pic")
+        
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera){
+            print("Button capture")
+            
+            var image = UIImagePickerController()
+            image.delegate = self
+            image.sourceType = UIImagePickerControllerSourceType.Camera;
+            image.mediaTypes = [kUTTypeImage as String]
+            image.allowsEditing = false
+            
+            self.presentViewController(image, animated: true, completion: nil)
+        }
+        
+    }
+    
+    func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!){
+        print("i've got an image");
+        dismissViewControllerAnimated(true, completion: nil)
+        print(image)
+        botFaceImage.image = image
+        
+    }
+    
     func dismissKeyboard() {
-        //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 
