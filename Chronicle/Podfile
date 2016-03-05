@@ -5,6 +5,9 @@ use_frameworks!
 
 target 'Chronicle' do
 	pod 'FBSDKLoginKit', '~> 4.9'
+	pod 'AEXML', '~> 2.1'
+	pod 'RealmSwift', '~> 0.98'
+	pod 'RealmMapView'	
 end
 
 target 'ChronicleTests' do
