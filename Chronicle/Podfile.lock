@@ -2,7 +2,6 @@ PODS:
   - ABFRealmMapView (1.7.3):
     - RBQFetchedResultsController (>= 2.0)
     - Realm (>= 0.96)
-  - AEXML (2.1.0)
   - RBQFetchedResultsController (3.0.1):
     - Realm (>= 0.95)
   - Realm (0.98.3):
@@ -17,19 +16,20 @@ PODS:
   - SwiftFetchedResultsController (3.0.1):
     - RBQFetchedResultsController (>= 3.0.1)
     - RealmSwift (>= 0.96)
+  - SWXMLHash (2.1.0)
 
 DEPENDENCIES:
-  - AEXML (~> 2.1)
   - RealmMapView
   - RealmSwift (~> 0.98)
+  - SWXMLHash (~> 2.1)
 
 SPEC CHECKSUMS:
   ABFRealmMapView: e3d18e6a2df1713c07b4e518504558ecbadc9968
-  AEXML: 0e2f657fdc67e17905682a06d55583a863d80803
   RBQFetchedResultsController: 4b8a80647859241abdb3da04b486a6ad02dd5093
   Realm: c6a7d00221a2d5177810a674aebd40c5e0b70b0f
   RealmMapView: 2a3de4d3434e8e0778075d1a9cf34e12161a3daf
   RealmSwift: d6ecad6e4c2a645d6ac956c2c7e9efb375f39c31
   SwiftFetchedResultsController: 646da58a5cde2293b692f5c8283d1db001d720bc
+  SWXMLHash: 7257a358b3ab2f7a209e0b4e4cf552e8b6df5f0f
 
 COCOAPODS: 0.39.0
