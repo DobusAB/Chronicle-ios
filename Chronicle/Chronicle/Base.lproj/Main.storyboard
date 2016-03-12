@@ -196,7 +196,7 @@
         <!--Detail View Controller-->
         <scene sceneID="msE-yS-14r">
             <objects>
-                <viewController id="djb-2V-dH1" customClass="DetailViewController" sceneMemberID="viewController">
+                <viewController id="djb-2V-dH1" customClass="DetailViewController" customModule="Chronicle" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6od-9J-ilb"/>
                         <viewControllerLayoutGuide type="bottom" id="BVJ-om-jlA"/>

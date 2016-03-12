@@ -60,9 +60,9 @@ class InventoryViewController: UIViewController, UICollectionViewDataSource, UIC
             let detailController = segue.destinationViewController as! DetailViewController
             let cell = sender as! UICollectionViewCell
             if let indexPath = collectionVIew.indexPathForCell(cell){
-                print(indexPath)
+                let id = itemsArray[indexPath.row].itemId
+                detailController.itemId = id
             }
-            print("Nooo")
         }
     }
     
