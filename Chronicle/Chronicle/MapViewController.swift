@@ -76,6 +76,31 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         self.presentViewController(vc, animated: true, completion: nil)
     }
     
+    func tresureFound(itemId: String) {
+        let realm = try! Realm()
+        let item = realm.objects(Item).filter("itemId == '\(itemId)'").first
+        
+        if let itemDiscovered = item!.discovered as? Bool {
+            if itemDiscovered {
+                print("Already discovered...")
+            } else {
+                let vc = self.storyboard?.instantiateViewControllerWithIdentifier("TreasureViewController") as! TreasureViewController
+                vc.modalPresentationStyle = UIModalPresentationStyle.Custom
+                vc.transitioningDelegate = treasureTransitionmanager
+                self.presentViewController(vc, animated: true, completion: nil)
+            }
+        }
+        
+        do {
+            let realm = try Realm()
+            try realm.write() {
+                item?.discovered = true
+                realm.add(item!, update: true)
+            }
+        } catch {
+            print("Something went wrong with realm!")
+        }
+    }
     
     func addRadiusCircle(location: CLLocation){
         self.mapView.delegate = self
@@ -143,15 +168,16 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     func locationManager(manager: CLLocationManager, didEnterRegion region: CLRegion) {
         print("DID ENTER REGION")
         print(region.identifier)
+        tresureFound(region.identifier)
         sendNotification(region)
     }
     
     func sendNotification(region: CLRegion) {
         do {
             let realm = try Realm()
-            let item = realm.objects(Item).filter("itemId == '\(region.identifier)'")[0]
+            let item = realm.objects(Item).filter("itemId == '\(region.identifier)'").first
             var localn = UILocalNotification()
-            localn.alertBody = "Du hittade en skattkista: \(item.itemLabel)"
+            localn.alertBody = "Du hittade en skattkista: \(item!.itemLabel)"
             localn.soundName = UILocalNotificationDefaultSoundName;
             UIApplication.sharedApplication().presentLocalNotificationNow(localn)
         } catch {
@@ -169,9 +195,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         print(newLocation.coordinate.latitude)
         let center = CLLocationCoordinate2D(latitude: newLocation.coordinate.latitude, longitude: newLocation.coordinate.longitude)
         let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
-        
         self.mapView.setRegion(region, animated: true)
-        
         
         for region in regionsToMonitor {
             locationManager.stopMonitoringForRegion(region)
