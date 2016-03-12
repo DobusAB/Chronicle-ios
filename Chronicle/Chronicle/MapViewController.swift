@@ -19,7 +19,12 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         super.viewDidLoad()
         mapView.delegate = self
         mapView.showsUserLocation = true
-        
+        //Remove mapdata
+        if mapView.subviews.count > 0 {
+            print("has subviews")
+            mapView.subviews.first?.subviews.first?.alpha = 0.0
+            //print(MyUIView)
+        }
         //let location = CLLocationCoordinate2D(latitude: 56.6890642598087, longitude: 12.8339380955437)
         //let region = MKCoordinateRegionMakeWithDistance(location, 5000.0, 7000.0)
         //mapView.setRegion(region, animated: true)
