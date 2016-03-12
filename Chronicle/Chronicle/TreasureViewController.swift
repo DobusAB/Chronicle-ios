@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import pop
 
 class TreasureViewController: UIViewController {
 
     @IBOutlet weak var modalContainer: UIView!
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var treasurechest: UIImageView!
+    let primaryBlue = UIColor(red:0.22, green:0.52, blue:0.91, alpha:1.0)
     
     override func viewWillAppear(animated: Bool) {
 
@@ -20,6 +22,13 @@ class TreasureViewController: UIViewController {
         let tapRecognizer = UITapGestureRecognizer(target: self, action: Selector("imageTapped:"))
         treasurechest.addGestureRecognizer(tapRecognizer)
         treasurechest.image = UIImage(named: "treasure-closed")
+        closeButton.backgroundColor = primaryBlue
+        closeButton.layer.shadowColor = primaryBlue.CGColor
+        closeButton.layer.shadowOffset = CGSizeMake(0, 0)
+        closeButton.layer.shadowRadius = 15
+        closeButton.layer.shadowOpacity = 0.9
+        closeButton.layer.cornerRadius = 0.5 * closeButton.bounds.size.width
+        
         
         UIView.animateWithDuration(1.0, delay:0, options: [.Repeat, .Autoreverse], animations: {
             
@@ -27,24 +36,36 @@ class TreasureViewController: UIViewController {
            // self.treasurechest.layer.position.y = botOriginalY + 38
             
             }, completion: nil)
-        
-        
     }
     
     func imageTapped(gestureRecognizer: UITapGestureRecognizer) {
         //tappedImageView will be the image view that was tapped.
         //dismiss it, animate it off screen, whatever.
-        print("CLIIIIICKED")
+        print("Opened Chest")
         let imageName = "spaceship.pdf"
         let image = UIImage(named: imageName)
         let imageView = UIImageView(image: image!)
         self.treasurechest.addSubview(imageView)
-        imageView.center = CGPointMake(treasurechest.frame.size.width  / 2,
-            treasurechest.frame.size.height / 2);
-        
         imageView.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-
+        imageView.center = CGPointMake(treasurechest.frame.size.width  / 2,
+            treasurechest.frame.size.height / 2 - 20);
+        treasurechest.userInteractionEnabled = false
+        
+        UIView.animateWithDuration(0.8, delay:0, options: [], animations: {
+            
+            //self.treasurechest.layer.position.y = self.treasurechest.layer.position.y - 15
+            
+            let spring = POPSpringAnimation(propertyNamed: kPOPLayerTranslationY)
+            spring.fromValue = 0
+            spring.toValue = -20
+            spring.springBounciness = 10
+            spring.springSpeed = 10
+            self.treasurechest.layer.pop_addAnimation(spring, forKey: "moveUp")
+            
+            }, completion: nil)
+        
         treasurechest.image = UIImage(named: "treasure-open")
+        print("Chest just opened")
     }
     
     override func viewDidLoad() {
