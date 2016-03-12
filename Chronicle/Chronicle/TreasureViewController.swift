@@ -32,6 +32,8 @@ class TreasureViewController: UIViewController, UIDynamicAnimatorDelegate{
         closeButton.layer.shadowRadius = 15
         closeButton.layer.shadowOpacity = 0.9
         closeButton.layer.cornerRadius = 0.5 * closeButton.bounds.size.width
+        modalContainer.layer.cornerRadius = 4
+        modalContainer.clipsToBounds = true
     
 
     }
