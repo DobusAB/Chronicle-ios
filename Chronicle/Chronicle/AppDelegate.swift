@@ -137,7 +137,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             
             let realm = try! Realm()
             let items = realm.objects(Item)
-            print(items)
+            //print(items)
             
             
         }
