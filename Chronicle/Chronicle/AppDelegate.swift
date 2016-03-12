@@ -88,12 +88,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             //var coordinatesArr = split(coordniates) {$0 == ","}
             var splited = coordniates.characters.split{ $0 == "," }.map(String.init)
             
-            if let lng = splited[0] as? Double {
-                var long = lng
-            }
-            if let lt = splited[0] as? Double {
-                var lat = lt
-            }
+            long = Double(splited[0])!
+        
+        
+            lat = Double(splited[1])!
+            
             
             let item = Item()
             
@@ -114,6 +113,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             } catch {
                 print("Something went wrong with realm!")
             }
+            
+            let realm = try! Realm()
+            let items = realm.objects(Item)
+            print(items)
             
             
         }
