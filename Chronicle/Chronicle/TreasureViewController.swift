@@ -14,6 +14,7 @@ class TreasureViewController: UIViewController, UIDynamicAnimatorDelegate{
     @IBOutlet weak var modalContainer: UIView!
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var treasurechest: UIImageView!
+    @IBOutlet weak var cardContainer: UIView!
     let primaryBlue = UIColor(red:0.22, green:0.52, blue:0.91, alpha:1.0)
     
     var gravity: UIGravityBehavior!
@@ -32,7 +33,8 @@ class TreasureViewController: UIViewController, UIDynamicAnimatorDelegate{
         closeButton.layer.shadowRadius = 15
         closeButton.layer.shadowOpacity = 0.9
         closeButton.layer.cornerRadius = 0.5 * closeButton.bounds.size.width
-        modalContainer.layer.cornerRadius = 4
+        cardContainer.layer.cornerRadius = 4
+        cardContainer.clipsToBounds = true
     
 
     }
