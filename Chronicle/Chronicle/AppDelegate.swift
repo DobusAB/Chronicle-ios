@@ -72,13 +72,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         var long: Double = 0.0;
         var itemlabel: String? = "";
         var itemDescription: String? = "";
-        var thumbnail: String? = "";
+        var thumbnail: String = "";
         var itemType: String? = "";
         var id : String? = "";
         var timeLabel: String? = "";
         
         for items in xmlItems {
-            
             /*for description in items["rdf:RDF"]["rdf:Description"] {
                 print(description["ns5:presentation"]["pres:item"]["pres:id"].element?.text)
             }*/
@@ -102,6 +101,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             
             if let datathumbnail = datan["ns5:thumbnail"].element?.text {
                 thumbnail = datathumbnail
+                //print(datathumbnail)
+            } else {
+                thumbnail = ""
             }
             if let dataTimeLabel = datan["ns5:presentation"]["pres:item"]["pres:context"]["pres:timeLabel"].element?.text{
                 timeLabel = dataTimeLabel
@@ -127,7 +129,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             item.itemLabel = itemlabel!
             item.itemType = itemType!
             item.itemDescription = itemDescription!
-            item.thumbnail = thumbnail!
+            item.thumbnail = thumbnail
             item.lat = lat
             item.lng = long
             item.timeLabel = timeLabel!
@@ -144,7 +146,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             
             let realm = try! Realm()
             let items = realm.objects(Item)
-            print(items)
+            //print(items)
             
             
         }
