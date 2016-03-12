@@ -26,7 +26,6 @@ class InventoryViewController: UIViewController, UICollectionViewDataSource, UIC
             itemsArray.append(item)
         }
         self.collectionVIew.reloadData()
-        
         getData()
         
         // Do any additional setup after loading the view.
@@ -61,8 +60,11 @@ class InventoryViewController: UIViewController, UICollectionViewDataSource, UIC
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! ItemCollectionViewCell
         let url = NSURL(string: itemsArray[indexPath.row].thumbnail)
         
-        cell.ItemImage.layer.cornerRadius = 4
+        cell.ItemImage.layer.cornerRadius = 3
         cell.ItemImage.clipsToBounds = true;
+        cell.backgroundColor = UIColor(red:0.79, green:0.79, blue:0.79, alpha:1.0)
+        cell.layer.cornerRadius = 4
+        cell.photoBg.layer.cornerRadius = 2
         
         if itemsArray[indexPath.row].thumbnail.isEmpty {
             cell.ItemImage.image = UIImage(named: "treasure-closed")
