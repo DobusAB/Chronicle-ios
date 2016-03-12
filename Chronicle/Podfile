@@ -4,7 +4,7 @@
 use_frameworks!
 
 target 'Chronicle' do
-	pod 'AEXML', '~> 2.1'
+	pod 'SWXMLHash', '~> 2.1'
 	pod 'RealmSwift', '~> 0.98'
 	pod 'RealmMapView'	
 	pod 'pop', '~> 1.0'

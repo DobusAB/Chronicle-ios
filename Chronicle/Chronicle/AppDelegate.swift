@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 import CoreLocation
-import AEXML
+import SWXMLHash
 import RealmSwift
 
 @UIApplicationMain
@@ -63,23 +63,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             print("Something went wrong with realm!")
         }
         
+        
+        
         // Override point for customization after application launch.
-        guard let
+        /*guard let
             xmlPath = NSBundle.mainBundle().pathForResource("data1", ofType: "xml"),
             data = NSData(contentsOfFile: xmlPath)
             else { return true}
         
         do {
             let xmlDoc = try AEXMLDocument(xmlData: data)
-            var list = [AEXMLElement]()
+            var records = [AEXMLElement]()
             var count: Int = 0
-            for dog in xmlDoc.root["records"]["record"].all! {
-                list.append(dog);
+            //print(xmlDoc.xmlString)
+            print("Some locations")
+            
+            
+            
+            for item in xmlDoc.root["records"]["record"].all! {
+                records.append(item);
                 //print(count)
+                //print(item);
                 count++
             }
             
-            for record in list {
+            for record in records {
+                let item = Item()
+                //print(record.children)
+                for rec in record.children {
+                    //print(rec.stringValue)
+                }
+            }
+            
+            /*for record in list {
                 let item = Item()
                 for rec in record.children {
                     //print(rec.attributes["name"]);
@@ -121,12 +137,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
                         print("Something went wrong with realm!")
                     }
                 }
-            }
+            }*/
             
         }
         catch {
             print("\(error)")
-        }
+        }*/
         
         return true
     }
