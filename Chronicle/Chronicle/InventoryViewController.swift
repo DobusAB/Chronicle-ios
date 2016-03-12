@@ -8,6 +8,8 @@
 
 import UIKit
 import RealmSwift
+import SDWebImage
+
 class InventoryViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     var itemsArray = [Item]()
     
@@ -41,10 +43,7 @@ class InventoryViewController: UIViewController, UICollectionViewDataSource, UIC
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! ItemCollectionViewCell
         let url = NSURL(string: itemsArray[indexPath.row].thumbnail)
-        let data = NSData(contentsOfURL: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check
-        
-        cell.ItemImage.image = UIImage(data: data!)
-        
+        cell.ItemImage.sd_setImageWithURL(url, completed: nil)
 //        print(imgURL)
         //cell.ItemImage = UIImage(contentsOfFile: itemsArray[0].thumbnail.)
         // Configure the cell

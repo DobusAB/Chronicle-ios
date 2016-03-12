@@ -39,13 +39,13 @@
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-    <key>NSAppTransportSecurity</key>
-    <dict>
-        <key>NSAllowsArbitraryLoads</key>
-        <true/>
-    </dict>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Give me your fucking location, BITCH!!!</string>
+	<string>Vi behöver tillgång till din position för att appen ska fungera</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>location</string>
