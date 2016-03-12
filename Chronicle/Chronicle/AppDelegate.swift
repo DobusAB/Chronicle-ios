@@ -66,24 +66,45 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         let xmlPath = NSBundle.mainBundle().pathForResource("data1", ofType: "xml")
         
         let data = NSData(contentsOfFile: xmlPath!)
-        var arr = [];
         let xml = SWXMLHash.lazy(data!)
         let xmlItems = xml["result"]["records"]["record"]
         var lat: Double = 0.0;
         var long: Double = 0.0;
+        var itemlabel: String? = "";
+        var itemDescription: String? = "";
+        var thumbnail: String? = "";
+        var itemType: String? = "";
+        var id : String? = "";
         
         for items in xmlItems {
             
             /*for description in items["rdf:RDF"]["rdf:Description"] {
                 print(description["ns5:presentation"]["pres:item"]["pres:id"].element?.text)
             }*/
-            var data = items["rdf:RDF"]["rdf:Description"][0]["ns5:presentation"]["pres:item"]
-            var id = data["pres:id"].element?.text
-            var itemlabel = data["pres:itemLabel"].element?.text
-            var itemType = data["pres:type"].element?.text
-            var itemDescription = data["pres:description"].element?.text
-            var thumbnail = data["pres:image"]["pres:src"][1].element?.text
-            var coordniates = data["georss:where"]["gml:Point"]["gml:coordinates"].element!.text!
+            var datan = items["rdf:RDF"]["rdf:Description"][0]
+            
+            if let dataId = datan["ns5:presentation"]["pres:item"]["pres:id"].element?.text {
+                id = dataId
+            }
+            
+            if let dataDescription = datan["ns5:presentation"]["pres:item"]["pres:description"].element?.text {
+                itemDescription = dataDescription
+            }
+            
+            if let dataLabel = datan["ns5:presentation"]["pres:item"]["pres:itemLabel"].element?.text {
+                itemlabel = dataLabel
+            }
+            
+            if let dataType = datan["ns5:presentation"]["pres:item"]["pres:type"].element?.text {
+                itemType = dataType
+            }
+            
+            if let datathumbnail = datan["ns5:thumbnail"].element?.text {
+                thumbnail = datathumbnail
+            }
+            
+            
+            var coordniates = datan["ns5:presentation"]["pres:item"]["georss:where"]["gml:Point"]["gml:coordinates"].element!.text!
             
             //var coordinatesArr = split(coordniates) {$0 == ","}
             var splited = coordniates.characters.split{ $0 == "," }.map(String.init)
@@ -97,10 +118,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             let item = Item()
             
             item.itemId = id!
-            //item.itemLabel = itemlabel!
-            //item.itemType = itemType!
-            //item.itemDescription = itemDescription!
-            //item.thumbnail = thumbnail!
+            item.itemLabel = itemlabel!
+            item.itemType = itemType!
+            item.itemDescription = itemDescription!
+            item.thumbnail = thumbnail!
             item.lat = lat
             item.lng = long
             
