@@ -2,6 +2,15 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:officersflygeln.gpx">
+   </FileRef>
+   <FileRef
+      location = "group:musikmuseet.gpx">
+   </FileRef>
+   <FileRef
+      location = "group:naturvardsverket.gpx">
+   </FileRef>
+   <FileRef
       location = "group:Chronicle.xcodeproj">
    </FileRef>
    <FileRef
