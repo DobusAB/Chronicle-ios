@@ -117,6 +117,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="itemImage" destination="Lf3-N3-uqq" id="njj-JR-skS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
@@ -369,13 +372,6 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bSI-UE-CWQ">
                                                 <rect key="frame" x="0.0" y="55" width="530" height="395"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="treasure-closed" translatesAutoresizingMaskIntoConstraints="NO" id="uS1-pA-nOq">
-                                                        <rect key="frame" x="71" y="95" width="150" height="120"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="150" id="HcA-H9-EOm"/>
-                                                            <constraint firstAttribute="height" constant="120" id="anV-vG-tly"/>
-                                                        </constraints>
-                                                    </imageView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="onf-8o-K0k">
                                                         <rect key="frame" x="0.0" y="170" width="530" height="225"/>
                                                         <color key="backgroundColor" red="0.89087041884816753" green="0.89087041884816753" blue="0.89087041884816753" alpha="1" colorSpace="calibratedRGB"/>
@@ -383,6 +379,13 @@
                                                             <constraint firstAttribute="height" constant="225" id="lDI-Vb-bOc"/>
                                                         </constraints>
                                                     </view>
+                                                    <imageView userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="treasure-closed" translatesAutoresizingMaskIntoConstraints="NO" id="uS1-pA-nOq">
+                                                        <rect key="frame" x="71" y="95" width="150" height="120"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="150" id="HcA-H9-EOm"/>
+                                                            <constraint firstAttribute="height" constant="120" id="anV-vG-tly"/>
+                                                        </constraints>
+                                                    </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
