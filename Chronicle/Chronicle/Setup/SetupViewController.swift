@@ -15,8 +15,6 @@ class SetupViewController: UIViewController, UIImagePickerControllerDelegate, UI
     @IBOutlet weak var setupButton: UIButton!
     @IBOutlet weak var botImage: UIImageView!
     @IBOutlet weak var shadowImage: UIImageView!
-    @IBOutlet weak var nameInput: UITextField!
-    @IBOutlet weak var inputLabel: UILabel!
     @IBOutlet weak var botFaceImage: UIImageView!
     @IBOutlet weak var addProfileImageButton: UIButton!
     
@@ -33,16 +31,10 @@ class SetupViewController: UIViewController, UIImagePickerControllerDelegate, UI
         setupButton.layer.shadowOffset = CGSizeMake(0, -3)
         setupButton.layer.shadowRadius = 4
         setupButton.layer.shadowOpacity = 0.2
-        inputLabel.layer.cornerRadius = 17;
-        inputLabel.clipsToBounds = true;
-        inputLabel.backgroundColor = UIColor(red:0.32, green:0.62, blue:1.00, alpha:1.0)
         let border = CALayer()
         let width = CGFloat(2.0)
         border.borderColor = UIColor.darkGrayColor().CGColor
-        border.frame = CGRect(x: 0, y: nameInput.frame.size.height - width, width:  nameInput.frame.size.width, height: nameInput.frame.size.height)
         border.borderWidth = width
-        nameInput.layer.addSublayer(border)
-        nameInput.layer.masksToBounds = true
         botFaceImage.layer.cornerRadius = botFaceImage.frame.size.width/2
         botFaceImage.clipsToBounds = true
         botFaceImage.layer.borderColor = UIColor.blackColor().CGColor
@@ -68,12 +60,10 @@ class SetupViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     
     @IBAction func addProfileImage(sender: AnyObject) {
-        
         print("Let's change your profile-pic")
         
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera){
             print("Button capture")
-            
             var image = UIImagePickerController()
             image.delegate = self
             image.sourceType = UIImagePickerControllerSourceType.Camera;
@@ -82,34 +72,31 @@ class SetupViewController: UIViewController, UIImagePickerControllerDelegate, UI
             
             self.presentViewController(image, animated: true, completion: nil)
         }
-        
     }
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+        let imgData: NSData = UIImageJPEGRepresentation(image, 1.0)!
+        let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
+        let writePath = documentsPath.stringByAppendingString("/userimage.jpg")
+        imgData.writeToFile(writePath, atomically: true)
+        print(writePath)
+        
+        botFaceImage.image = image
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    /*func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        
         print("i've got an image");
         if let pickedImage:UIImage = (info[UIImagePickerControllerOriginalImage]) as? UIImage {
             
-            let imageData: NSData = UIImagePNGRepresentation(pickedImage)!
-            //print(imageData)
-            let url = info[UIImagePickerControllerReferenceURL] as? NSURL
-            print(url)
-//            print(info[UIImagePickerControllerReferenceURL] as! String)
-/*            if let hej = info[UIImagePickerControllerReferenceURL] as? NSURL {
-                print(hej)
-            }*/
-            
         }
-        //print(info)
-        //let imageURL = info[UIImagePickerControllerReferenceURL] as! String
-        //print(imageURL)
-        
-        //print(editingInfo)
         
         dismissViewControllerAnimated(true, completion: nil)
         //print(image)
-        //botFaceImage.image = image
+        botFaceImage.image = image
         
-    }
+    }*/
     
     
     func dismissKeyboard() {
