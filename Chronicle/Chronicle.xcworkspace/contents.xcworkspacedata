@@ -2,12 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Scandic Halmstad.gpx">
-   </FileRef>
-   <FileRef
-      location = "group:/Users/sema0703/Appar/iOS/Chronicle-ios/Chronicle/H&#xf6;gskolan Halmstad.gpx">
-   </FileRef>
-   <FileRef
       location = "group:Chronicle.xcodeproj">
    </FileRef>
    <FileRef
