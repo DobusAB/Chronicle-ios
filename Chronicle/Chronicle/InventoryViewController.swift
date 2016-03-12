@@ -43,7 +43,16 @@ class InventoryViewController: UIViewController, UICollectionViewDataSource, UIC
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! ItemCollectionViewCell
         let url = NSURL(string: itemsArray[indexPath.row].thumbnail)
-        cell.ItemImage.sd_setImageWithURL(url, completed: nil)
+        print(itemsArray[indexPath.row].thumbnail)
+        
+        if itemsArray[indexPath.row].thumbnail.isEmpty {
+            cell.ItemImage.image = UIImage(named: "treasure-closed")
+            return cell
+        } else {
+            cell.ItemImage.sd_setImageWithURL(url, completed: nil)
+            return cell
+        }
+        
 //        print(imgURL)
         //cell.ItemImage = UIImage(contentsOfFile: itemsArray[0].thumbnail.)
         // Configure the cell

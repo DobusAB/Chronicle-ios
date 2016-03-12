@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0473E8E51C8B5C1C00F5F8F1 /* UserData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0473E8E41C8B5C1C00F5F8F1 /* UserData.plist */; };
 		049519221C9429EF00210E5B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049519211C9429EF00210E5B /* User.swift */; };
 		55055F841C94546D008ABC43 /* CustomPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55055F831C94546D008ABC43 /* CustomPointAnnotation.swift */; };
 		552F641A1C94890600DA62FA /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552F64191C94890600DA62FA /* ItemCollectionViewCell.swift */; };
@@ -16,7 +15,6 @@
 		5584A3911C820D2F00494732 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584A3901C820D2F00494732 /* MapViewController.swift */; };
 		55A726881C81E20300C52517 /* data1.xml in Resources */ = {isa = PBXBuildFile; fileRef = 55A726871C81E20300C52517 /* data1.xml */; };
 		55D460E71C945BD90025DCEE /* InventoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D460E61C945BD90025DCEE /* InventoryViewController.swift */; };
-		B10C81531C8B39920070C93A /* User.plist in Resources */ = {isa = PBXBuildFile; fileRef = B10C81521C8B39920070C93A /* User.plist */; };
 		B17A64A91C94481E002B68C4 /* TreasureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17A64A81C94481E002B68C4 /* TreasureViewController.swift */; };
 		B17A64AC1C9449C2002B68C4 /* TreasureTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17A64AB1C9449C2002B68C4 /* TreasureTransitionManager.swift */; };
 		B1D0237D1C8B1E80003C0EAC /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D0237C1C8B1E80003C0EAC /* SetupViewController.swift */; };
@@ -48,7 +46,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0473E8E41C8B5C1C00F5F8F1 /* UserData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UserData.plist; sourceTree = "<group>"; };
 		049519211C9429EF00210E5B /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		23115E31E50E5B3F20E0138A /* Pods-Chronicle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chronicle.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chronicle/Pods-Chronicle.release.xcconfig"; sourceTree = "<group>"; };
 		46FA4654FBF9BEE378D87399 /* Pods_Chronicle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chronicle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,7 +57,6 @@
 		55A726871C81E20300C52517 /* data1.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = data1.xml; sourceTree = "<group>"; };
 		55D460E61C945BD90025DCEE /* InventoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InventoryViewController.swift; sourceTree = "<group>"; };
 		92FBA7DF35460F35A8BC7D1C /* Pods-Chronicle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chronicle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Chronicle/Pods-Chronicle.debug.xcconfig"; sourceTree = "<group>"; };
-		B10C81521C8B39920070C93A /* User.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = User.plist; sourceTree = "<group>"; };
 		B17A64A81C94481E002B68C4 /* TreasureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TreasureViewController.swift; path = Chronicle/TreasureViewController.swift; sourceTree = "<group>"; };
 		B17A64AB1C9449C2002B68C4 /* TreasureTransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreasureTransitionManager.swift; sourceTree = "<group>"; };
 		B1D0237C1C8B1E80003C0EAC /* SetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetupViewController.swift; path = Setup/SetupViewController.swift; sourceTree = "<group>"; };
@@ -179,8 +175,6 @@
 				B1E5617E1C676C1E0034C491 /* Assets.xcassets */,
 				B1E561801C676C1E0034C491 /* LaunchScreen.storyboard */,
 				B1E561831C676C1E0034C491 /* Info.plist */,
-				B10C81521C8B39920070C93A /* User.plist */,
-				0473E8E41C8B5C1C00F5F8F1 /* UserData.plist */,
 				55A726871C81E20300C52517 /* data1.xml */,
 				55055F831C94546D008ABC43 /* CustomPointAnnotation.swift */,
 			);
@@ -336,9 +330,7 @@
 				B1E561821C676C1E0034C491 /* LaunchScreen.storyboard in Resources */,
 				B1E5617F1C676C1E0034C491 /* Assets.xcassets in Resources */,
 				B1E5617D1C676C1E0034C491 /* Main.storyboard in Resources */,
-				B10C81531C8B39920070C93A /* User.plist in Resources */,
 				55A726881C81E20300C52517 /* data1.xml in Resources */,
-				0473E8E51C8B5C1C00F5F8F1 /* UserData.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
