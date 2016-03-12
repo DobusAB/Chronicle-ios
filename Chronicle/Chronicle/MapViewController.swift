@@ -30,21 +30,21 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         let user = realm.objects(User).first
         //print(items)
         
-        let annotation = CustomPointAnnotation()
+        /*let annotation = CustomPointAnnotation()
         annotation.coordinate = CLLocationCoordinate2D(latitude: 56.6890642598087, longitude: 12.8339380955437)
         annotation.title = "heheh"
         //annotation.imageName = user?.image as! String
-        self.mapView.addAnnotation(annotation)
+        self.mapView.addAnnotation(annotation)*/
         
-        /*for item in items {
+        for item in items {
             let annotation = CustomPointAnnotation()
-            annotation.coordinate = CLLocationCoordinate2D(latitude: 56.6890642598087, longitude: 12.8339380955437)
+            annotation.coordinate = CLLocationCoordinate2D(latitude: item.lat, longitude: item.lng)
             annotation.title = item.itemLabel
-            annotation.imageName = user?.image as! String
+            //annotation.imageName = user?.image as! String
             self.mapView.addAnnotation(annotation)
             annotations.append(annotation)
             addRadiusCircle(CLLocation(latitude: item.lat, longitude: item.lng))
-        }*/
+        }
         
         //let annotations = getMapAnnotations()
         mapView.addAnnotations(annotations)
