@@ -8,10 +8,9 @@
 
 import UIKit
 import MobileCoreServices
-
+import RealmSwift
 
 class SetupViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
     @IBOutlet weak var setupButton: UIButton!
     @IBOutlet weak var botImage: UIImageView!
     @IBOutlet weak var shadowImage: UIImageView!
@@ -81,23 +80,21 @@ class SetupViewController: UIViewController, UIImagePickerControllerDelegate, UI
         imgData.writeToFile(writePath, atomically: true)
         print(writePath)
         
-        botFaceImage.image = image
+        let user = User()
+        user.userId = "1"
+        user.image = writePath
+        //Save item to realm if item has long/lat
+        do {
+            let realm = try Realm()
+            try realm.write() {
+                realm.add(user)
+            }
+            botFaceImage.image = image
+        } catch {
+            print("Something went wrong with realm!")
+        }
         self.dismissViewControllerAnimated(true, completion: nil)
     }
-    
-    /*func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        
-        print("i've got an image");
-        if let pickedImage:UIImage = (info[UIImagePickerControllerOriginalImage]) as? UIImage {
-            
-        }
-        
-        dismissViewControllerAnimated(true, completion: nil)
-        //print(image)
-        botFaceImage.image = image
-        
-    }*/
-    
     
     func dismissKeyboard() {
         view.endEditing(true)
