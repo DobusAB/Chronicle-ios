@@ -27,6 +27,8 @@ class InventoryViewController: UIViewController, UICollectionViewDataSource, UIC
         }
         self.collectionVIew.reloadData()
         
+        getData()
+        
         // Do any additional setup after loading the view.
     }
 
@@ -34,6 +36,18 @@ class InventoryViewController: UIViewController, UICollectionViewDataSource, UIC
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func getData(){
+        
+        let realm = try! Realm()
+        var user = realm.objects(User).first
+        user?.image
+        print(user)
+       // userImage.sd_setImageWithURL(user?.image, completed: nil)
+        
+        
+    }
+
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
@@ -46,6 +60,9 @@ class InventoryViewController: UIViewController, UICollectionViewDataSource, UIC
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! ItemCollectionViewCell
         let url = NSURL(string: itemsArray[indexPath.row].thumbnail)
+        
+        cell.ItemImage.layer.cornerRadius = 4
+        cell.ItemImage.clipsToBounds = true;
         
         if itemsArray[indexPath.row].thumbnail.isEmpty {
             cell.ItemImage.image = UIImage(named: "treasure-closed")
