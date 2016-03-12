@@ -48,7 +48,8 @@ class TreasureViewController: UIViewController {
         self.treasurechest.addSubview(imageView)
         imageView.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
         imageView.center = CGPointMake(treasurechest.frame.size.width  / 2,
-            treasurechest.frame.size.height / 2 - 20);
+            treasurechest.frame.size.height / 2 - 20)
+        imageView.layer.opacity = 0
         treasurechest.userInteractionEnabled = false
         
         UIView.animateWithDuration(0.8, delay:0, options: [], animations: {
@@ -61,6 +62,13 @@ class TreasureViewController: UIViewController {
             spring.springBounciness = 10
             spring.springSpeed = 10
             self.treasurechest.layer.pop_addAnimation(spring, forKey: "moveUp")
+            
+            }, completion: nil)
+        
+        UIView.animateWithDuration(0.4, delay:0, options: [], animations: {
+            
+            imageView.layer.position.y = self.treasurechest.layer.position.y - 190
+            imageView.layer.opacity = 1
             
             }, completion: nil)
         
