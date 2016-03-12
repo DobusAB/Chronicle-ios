@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="R6i-aX-6P6">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--First-->
+        <!--Skattkarta-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="MapViewController" customModule="Chronicle" customModuleProvider="target" sceneMemberID="viewController">
@@ -49,7 +49,7 @@
                             <constraint firstItem="mAZ-Bi-4eB" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="p4y-qi-ZE5"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Skattkarta" image="first" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="mapView" destination="mAZ-Bi-4eB" id="P6w-zD-uEE"/>
                         <segue destination="9aC-hy-zMZ" kind="show" identifier="TreasureSegue" id="Df7-iR-OBd"/>
@@ -59,7 +59,7 @@
             </objects>
             <point key="canvasLocation" x="750" y="-320"/>
         </scene>
-        <!--Second-->
+        <!--Ryggsäck-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="InventoryViewController" customModule="Chronicle" customModuleProvider="target" sceneMemberID="viewController">
@@ -119,7 +119,7 @@
                             <constraint firstItem="QW0-QC-zQy" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" id="ptE-Yb-JTL"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Ryggsäck" image="second" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="collectionVIew" destination="QW0-QC-zQy" id="zgx-jP-XFu"/>
                     </connections>
@@ -187,7 +187,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4ku-4o-R7U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1353" y="0.0"/>
+            <point key="canvasLocation" x="-1505" y="0.0"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -206,7 +206,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="0.0"/>
+            <point key="canvasLocation" x="-28" y="0.0"/>
         </scene>
         <!--Setup View Controller-->
         <scene sceneID="Rb3-NP-hVT">
@@ -220,27 +220,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_auth" translatesAutoresizingMaskIntoConstraints="NO" id="wmb-8O-kEd">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="earth" translatesAutoresizingMaskIntoConstraints="NO" id="fJO-3Z-sEQ">
+                                <rect key="frame" x="360" y="105" width="180" height="180"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="nOe-aN-EHH"/>
+                                    <constraint firstAttribute="height" constant="180" id="cDY-nX-RNh"/>
+                                    <constraint firstAttribute="width" constant="180" id="oMk-jo-fkn"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="nOe-aN-EHH"/>
-                                    </mask>
-                                </variation>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zjR-DO-qEQ">
+                                <rect key="frame" x="0.0" y="20" width="600" height="350"/>
+                                <color key="backgroundColor" red="0.058201042786619341" green="0.086280815375203671" blue="0.16115837696335078" alpha="0.73260195035460995" colorSpace="calibratedRGB"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MK6-j5-A4J">
                                 <rect key="frame" x="0.0" y="370" width="600" height="230"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oio-fQ-LLO">
-                                        <rect key="frame" x="0.0" y="170" width="600" height="60"/>
+                                        <rect key="frame" x="200" y="120" width="201" height="60"/>
                                         <color key="backgroundColor" red="0.0" green="0.26446752420000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="JTV-Z9-Lib"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                        <inset key="contentEdgeInsets" minX="50" minY="0.0" maxX="50" maxY="0.0"/>
                                         <state key="normal" title="Aktivera bot">
                                             <color key="titleColor" red="0.98714364600000004" green="1" blue="0.98272162360000004" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -252,10 +253,17 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="Oio-fQ-LLO" firstAttribute="leading" secondItem="MK6-j5-A4J" secondAttribute="leading" id="7DQ-7M-ejM"/>
-                                    <constraint firstAttribute="bottom" secondItem="Oio-fQ-LLO" secondAttribute="bottom" id="GRe-vV-GJe"/>
+                                    <constraint firstAttribute="bottom" secondItem="Oio-fQ-LLO" secondAttribute="bottom" constant="50" id="GRe-vV-GJe"/>
+                                    <constraint firstItem="Oio-fQ-LLO" firstAttribute="centerX" secondItem="MK6-j5-A4J" secondAttribute="centerX" id="Lwl-lI-Zgu"/>
                                     <constraint firstAttribute="height" constant="230" id="PWz-q0-2DU"/>
                                     <constraint firstAttribute="trailing" secondItem="Oio-fQ-LLO" secondAttribute="trailing" id="rvO-cu-30d"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="7DQ-7M-ejM"/>
+                                        <exclude reference="rvO-cu-30d"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bot_setup_shadow" translatesAutoresizingMaskIntoConstraints="NO" id="f4B-WX-3CJ">
                                 <rect key="frame" x="250" y="400" width="100" height="20"/>
@@ -291,38 +299,32 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="zjR-DO-qEQ" secondAttribute="trailing" id="1VB-gV-uTu"/>
                             <constraint firstItem="jTr-fz-MRd" firstAttribute="top" secondItem="shb-x8-Ian" secondAttribute="bottom" id="34D-0I-iPM"/>
                             <constraint firstItem="jTr-fz-MRd" firstAttribute="centerX" secondItem="shb-x8-Ian" secondAttribute="centerX" id="4h1-rk-QE7"/>
-                            <constraint firstItem="wmb-8O-kEd" firstAttribute="top" secondItem="WxR-c5-rjP" secondAttribute="top" id="6NF-oX-uLL"/>
+                            <constraint firstItem="fJO-3Z-sEQ" firstAttribute="centerY" secondItem="zjR-DO-qEQ" secondAttribute="centerY" id="8JQ-r3-0GY"/>
+                            <constraint firstItem="MK6-j5-A4J" firstAttribute="top" secondItem="zjR-DO-qEQ" secondAttribute="bottom" id="8Ow-Rp-AcG"/>
+                            <constraint firstItem="zjR-DO-qEQ" firstAttribute="top" secondItem="QXd-fM-dq0" secondAttribute="bottom" id="8tO-4Q-c3J"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fJO-3Z-sEQ" secondAttribute="trailing" constant="40" id="9fC-ms-sC8"/>
                             <constraint firstItem="shb-x8-Ian" firstAttribute="leading" secondItem="MK6-j5-A4J" secondAttribute="trailing" id="ArF-jn-zjl"/>
-                            <constraint firstItem="wmb-8O-kEd" firstAttribute="leading" secondItem="MK6-j5-A4J" secondAttribute="trailing" id="DUK-AY-dH3"/>
                             <constraint firstAttribute="trailing" secondItem="MK6-j5-A4J" secondAttribute="trailing" id="GLs-3V-7b8"/>
-                            <constraint firstAttribute="trailing" secondItem="wmb-8O-kEd" secondAttribute="trailing" id="GX4-gt-7MP"/>
                             <constraint firstItem="jTr-fz-MRd" firstAttribute="centerX" secondItem="WxR-c5-rjP" secondAttribute="centerX" id="LPa-RD-m7Y"/>
                             <constraint firstItem="jTr-fz-MRd" firstAttribute="top" secondItem="shb-x8-Ian" secondAttribute="top" constant="35" id="MNJ-6m-hWa"/>
                             <constraint firstItem="shb-x8-Ian" firstAttribute="centerX" secondItem="WxR-c5-rjP" secondAttribute="centerX" id="NDm-2I-vG2"/>
-                            <constraint firstItem="wmb-8O-kEd" firstAttribute="leading" secondItem="WxR-c5-rjP" secondAttribute="leading" id="NHv-Av-emk"/>
                             <constraint firstItem="R4t-QY-Sdb" firstAttribute="centerX" secondItem="jTr-fz-MRd" secondAttribute="centerX" id="RiB-fL-FWS"/>
+                            <constraint firstItem="zjR-DO-qEQ" firstAttribute="leading" secondItem="WxR-c5-rjP" secondAttribute="leading" id="SNl-IB-Ydr"/>
                             <constraint firstItem="bHI-TH-wnK" firstAttribute="top" secondItem="shb-x8-Ian" secondAttribute="bottom" constant="210" id="YWs-pz-d12"/>
                             <constraint firstItem="f4B-WX-3CJ" firstAttribute="top" secondItem="shb-x8-Ian" secondAttribute="bottom" constant="10" id="ZEw-25-IQm"/>
                             <constraint firstAttribute="trailingMargin" secondItem="MK6-j5-A4J" secondAttribute="trailing" id="aeg-zH-Uts"/>
-                            <constraint firstItem="f4B-WX-3CJ" firstAttribute="top" secondItem="wmb-8O-kEd" secondAttribute="bottom" id="cpw-tQ-T2K"/>
                             <constraint firstItem="bHI-TH-wnK" firstAttribute="top" secondItem="MK6-j5-A4J" secondAttribute="bottom" id="fE8-b2-hVa"/>
-                            <constraint firstItem="shb-x8-Ian" firstAttribute="bottom" secondItem="wmb-8O-kEd" secondAttribute="bottom" id="iRs-9C-ELd"/>
                             <constraint firstAttribute="trailing" secondItem="MK6-j5-A4J" secondAttribute="trailing" id="lMw-zx-F5w"/>
                             <constraint firstItem="MK6-j5-A4J" firstAttribute="leading" secondItem="WxR-c5-rjP" secondAttribute="leading" id="lkg-RN-sra"/>
-                            <constraint firstItem="shb-x8-Ian" firstAttribute="top" secondItem="wmb-8O-kEd" secondAttribute="bottom" id="mAY-ty-BqV"/>
                             <constraint firstItem="f4B-WX-3CJ" firstAttribute="centerX" secondItem="WxR-c5-rjP" secondAttribute="centerX" id="ooV-IN-Wls"/>
-                            <constraint firstItem="wmb-8O-kEd" firstAttribute="top" secondItem="shb-x8-Ian" secondAttribute="bottom" id="ueY-hI-qOo"/>
                             <constraint firstItem="R4t-QY-Sdb" firstAttribute="centerY" secondItem="jTr-fz-MRd" secondAttribute="centerY" constant="20" id="zdh-Tp-GX5"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="DUK-AY-dH3"/>
-                                <exclude reference="ueY-hI-qOo"/>
                                 <exclude reference="ArF-jn-zjl"/>
-                                <exclude reference="iRs-9C-ELd"/>
-                                <exclude reference="mAY-ty-BqV"/>
                                 <exclude reference="34D-0I-iPM"/>
                                 <exclude reference="4h1-rk-QE7"/>
                             </mask>
@@ -332,6 +334,7 @@
                         <outlet property="addProfileImageButton" destination="R4t-QY-Sdb" id="yuz-9H-IcX"/>
                         <outlet property="botFaceImage" destination="jTr-fz-MRd" id="YU6-tB-Gr7"/>
                         <outlet property="botImage" destination="shb-x8-Ian" id="8dl-p9-G73"/>
+                        <outlet property="earthImage" destination="fJO-3Z-sEQ" id="5WF-HD-hCf"/>
                         <outlet property="setupButton" destination="Oio-fQ-LLO" id="xcQ-BI-mpx"/>
                         <outlet property="shadowImage" destination="f4B-WX-3CJ" id="1q8-FB-SLG"/>
                         <segue destination="49e-Tb-3d3" kind="show" identifier="activateBotSegue" id="6FQ-UE-DTd"/>
@@ -339,7 +342,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CDp-lh-XJP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-636" y="0.0"/>
+            <point key="canvasLocation" x="-760" y="0.0"/>
         </scene>
         <!--Treasure View Controller-->
         <scene sceneID="Lge-AW-rZJ">
@@ -383,7 +386,7 @@
                                                         </constraints>
                                                     </view>
                                                     <imageView userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="treasure-closed" translatesAutoresizingMaskIntoConstraints="NO" id="uS1-pA-nOq">
-                                                        <rect key="frame" x="71" y="95" width="150" height="120"/>
+                                                        <rect key="frame" x="190" y="96" width="150" height="120"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="150" id="HcA-H9-EOm"/>
                                                             <constraint firstAttribute="height" constant="120" id="anV-vG-tly"/>
@@ -463,14 +466,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bg_auth" width="375" height="667"/>
         <image name="bot_face" width="58" height="58"/>
         <image name="bot_setup" width="120" height="180"/>
         <image name="bot_setup_shadow" width="90" height="12"/>
         <image name="close-icon" width="14" height="14"/>
         <image name="earth" width="188" height="188"/>
-        <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
+        <image name="first" width="23" height="25"/>
+        <image name="second" width="20" height="26"/>
         <image name="treasure-closed" width="144" height="91"/>
     </resources>
 </document>

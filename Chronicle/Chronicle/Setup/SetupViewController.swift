@@ -16,7 +16,9 @@ class SetupViewController: UIViewController, UIImagePickerControllerDelegate, UI
     @IBOutlet weak var shadowImage: UIImageView!
     @IBOutlet weak var botFaceImage: UIImageView!
     @IBOutlet weak var addProfileImageButton: UIButton!
+    @IBOutlet weak var earthImage: UIImageView!
     
+    let primaryBlue = UIColor(red:0.22, green:0.52, blue:0.91, alpha:1.0)
     let imagePicker = UIImagePickerController()
 
     
@@ -24,12 +26,7 @@ class SetupViewController: UIViewController, UIImagePickerControllerDelegate, UI
         
         let botOriginalY = botImage.frame.origin.y
         view.backgroundColor = UIColor(red:0.98, green:0.98, blue:0.98, alpha:1.0)
-        setupButton.backgroundColor = UIColor(red:0.32, green:0.62, blue:1.00, alpha:1.0)
-        setupButton.layer.zPosition = 1
-        setupButton.layer.shadowColor = UIColor.blackColor().CGColor
-        setupButton.layer.shadowOffset = CGSizeMake(0, -3)
-        setupButton.layer.shadowRadius = 4
-        setupButton.layer.shadowOpacity = 0.2
+        setupButton.layer.cornerRadius = 30
         let border = CALayer()
         let width = CGFloat(2.0)
         border.borderColor = UIColor.darkGrayColor().CGColor
@@ -38,6 +35,33 @@ class SetupViewController: UIViewController, UIImagePickerControllerDelegate, UI
         botFaceImage.clipsToBounds = true
         botFaceImage.layer.borderColor = UIColor.blackColor().CGColor
         botFaceImage.layer.borderWidth = 5.0
+        
+        
+        if botFaceImage.image == UIImage(named: "bot_face") {
+            
+            setupButton.enabled = false
+            setupButton.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.0)
+            setupButton.layer.shadowOffset = CGSizeMake(0, 0)
+            setupButton.layer.shadowRadius = 0
+            setupButton.layer.shadowOpacity = 0
+            
+        } else {
+            
+            setupButton.enabled = true
+            
+            
+            UIView.animateWithDuration(0.25, delay:0.5, options: [], animations: {
+                
+                self.setupButton.layer.shadowColor = self.primaryBlue.CGColor
+                self.setupButton.backgroundColor = self.primaryBlue
+                self.setupButton.layer.shadowOffset = CGSizeMake(0, 0)
+                self.setupButton.layer.shadowRadius = 10
+                self.setupButton.layer.shadowOpacity = 0.7
+                
+                }, completion: nil)
+            
+        }
+
         
         UIView.animateWithDuration(1.0, delay:0, options: [.Repeat, .Autoreverse], animations: {
             
