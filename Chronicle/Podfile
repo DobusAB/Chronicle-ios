@@ -6,7 +6,7 @@ use_frameworks!
 target 'Chronicle' do
 	pod 'SWXMLHash', '~> 2.1'
 	pod 'RealmSwift', '~> 0.98'
-	pod 'RealmMapView'	
+	pod 'SDWebImage', '~> 3.7'
 	pod 'pop', '~> 1.0'
 end
 

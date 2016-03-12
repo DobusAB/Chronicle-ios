@@ -10,6 +10,7 @@
 		0473E8E51C8B5C1C00F5F8F1 /* UserData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0473E8E41C8B5C1C00F5F8F1 /* UserData.plist */; };
 		049519221C9429EF00210E5B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049519211C9429EF00210E5B /* User.swift */; };
 		55055F841C94546D008ABC43 /* CustomPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55055F831C94546D008ABC43 /* CustomPointAnnotation.swift */; };
+		552F641A1C94890600DA62FA /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552F64191C94890600DA62FA /* ItemCollectionViewCell.swift */; };
 		557529311C821C940036FB01 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 557529301C821C940036FB01 /* MapKit.framework */; };
 		5584A38F1C81F25D00494732 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584A38E1C81F25D00494732 /* Item.swift */; };
 		5584A3911C820D2F00494732 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584A3901C820D2F00494732 /* MapViewController.swift */; };
@@ -52,6 +53,7 @@
 		23115E31E50E5B3F20E0138A /* Pods-Chronicle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chronicle.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chronicle/Pods-Chronicle.release.xcconfig"; sourceTree = "<group>"; };
 		46FA4654FBF9BEE378D87399 /* Pods_Chronicle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chronicle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55055F831C94546D008ABC43 /* CustomPointAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPointAnnotation.swift; sourceTree = "<group>"; };
+		552F64191C94890600DA62FA /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		557529301C821C940036FB01 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		5584A38E1C81F25D00494732 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		5584A3901C820D2F00494732 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				5584A38D1C81F24400494732 /* Model */,
 				B1E561751C676C1E0034C491 /* AppDelegate.swift */,
 				5584A3901C820D2F00494732 /* MapViewController.swift */,
+				552F64191C94890600DA62FA /* ItemCollectionViewCell.swift */,
 				55D460E61C945BD90025DCEE /* InventoryViewController.swift */,
 				B17A64AB1C9449C2002B68C4 /* TreasureTransitionManager.swift */,
 				B1E5617B1C676C1E0034C491 /* Main.storyboard */,
@@ -409,6 +412,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B17A64AC1C9449C2002B68C4 /* TreasureTransitionManager.swift in Sources */,
+				552F641A1C94890600DA62FA /* ItemCollectionViewCell.swift in Sources */,
 				B1E561AC1C676D860034C491 /* AuthViewController.swift in Sources */,
 				5584A38F1C81F25D00494732 /* Item.swift in Sources */,
 				B1E561761C676C1E0034C491 /* AppDelegate.swift in Sources */,

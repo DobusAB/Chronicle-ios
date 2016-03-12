@@ -7,13 +7,21 @@
 //
 
 import UIKit
-
+import RealmSwift
 class InventoryViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-
+    var itemsArray = [Item]()
+    
+    @IBOutlet weak var collectionVIew: UICollectionView!
     @IBOutlet weak var itemImage: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let realm = try! Realm()
+        let items = realm.objects(Item)
+        for item in items {
+            itemsArray.append(item)
+        }
+        self.collectionVIew.reloadData()
+        
         // Do any additional setup after loading the view.
     }
 
@@ -27,12 +35,18 @@ class InventoryViewController: UIViewController, UICollectionViewDataSource, UIC
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return itemsArray.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! UICollectionViewCell
-        cell.backgroundColor = UIColor.redColor()
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! ItemCollectionViewCell
+        let url = NSURL(string: itemsArray[indexPath.row].thumbnail)
+        let data = NSData(contentsOfURL: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check
+        
+        cell.ItemImage.image = UIImage(data: data!)
+        
+//        print(imgURL)
+        //cell.ItemImage = UIImage(contentsOfFile: itemsArray[0].thumbnail.)
         // Configure the cell
         return cell
     }

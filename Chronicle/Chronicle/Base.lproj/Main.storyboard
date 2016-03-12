@@ -81,7 +81,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="3sE-Rz-PB4">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="3sE-Rz-PB4" customClass="ItemCollectionViewCell" customModule="Chronicle" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -100,6 +100,9 @@
                                             <constraint firstAttribute="bottom" secondItem="Lf3-N3-uqq" secondAttribute="bottom" constant="10" id="kws-sC-jTI"/>
                                             <constraint firstAttribute="trailing" secondItem="Lf3-N3-uqq" secondAttribute="trailing" constant="10" id="uqI-S1-vCn"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="ItemImage" destination="Lf3-N3-uqq" id="1bj-Eq-j6t"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -118,7 +121,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
                     <connections>
-                        <outlet property="itemImage" destination="Lf3-N3-uqq" id="njj-JR-skS"/>
+                        <outlet property="collectionVIew" destination="QW0-QC-zQy" id="zgx-jP-XFu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
