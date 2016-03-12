@@ -127,18 +127,42 @@
                                             </mask>
                                         </variation>
                                     </imageView>
-                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="D8I-M9-6NG">
-                                        <rect key="frame" x="277" y="89" width="150" height="2"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="10" id="9CH-1Y-yRg"/>
-                                        </constraints>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Utforskarnivå" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dZg-Y9-Xol">
+                                        <rect key="frame" x="190" y="35" width="95" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                        <color key="textColor" red="0.32834535256410258" green="0.32834535256410258" blue="0.32834535256410258" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Legendarisk" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XlK-lJ-Cds">
+                                        <rect key="frame" x="190" y="55" width="107" height="22"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" progress="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="tz8-v9-3E8">
+                                        <rect key="frame" x="190" y="87" width="11" height="2"/>
                                     </progressView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="earth" translatesAutoresizingMaskIntoConstraints="NO" id="Kk1-nz-cju">
+                                        <rect key="frame" x="55" y="30" width="65" height="65"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="65" id="Pl1-Qy-vYB"/>
+                                            <constraint firstAttribute="width" constant="65" id="RCC-CT-t8S"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.90566907051282053" green="0.90566907051282053" blue="0.90566907051282053" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="dZg-Y9-Xol" firstAttribute="leading" secondItem="HRx-f7-zGX" secondAttribute="trailing" constant="40" id="0c8-DT-xHh"/>
                                     <constraint firstAttribute="height" constant="150" id="ACh-ay-XBL"/>
                                     <constraint firstAttribute="bottom" secondItem="HRx-f7-zGX" secondAttribute="bottom" id="DFk-kZ-lTU"/>
+                                    <constraint firstItem="XlK-lJ-Cds" firstAttribute="leading" secondItem="HRx-f7-zGX" secondAttribute="trailing" constant="40" id="Mxm-5v-0dl"/>
+                                    <constraint firstItem="tz8-v9-3E8" firstAttribute="leading" secondItem="HRx-f7-zGX" secondAttribute="trailing" constant="40" id="ZEE-y8-493"/>
                                     <constraint firstItem="HRx-f7-zGX" firstAttribute="leading" secondItem="GNN-5w-w8k" secondAttribute="leading" constant="25" id="ZK7-08-YAZ"/>
+                                    <constraint firstItem="Kk1-nz-cju" firstAttribute="top" secondItem="GNN-5w-w8k" secondAttribute="top" constant="30" id="de2-o0-mrz"/>
+                                    <constraint firstItem="dZg-Y9-Xol" firstAttribute="top" secondItem="GNN-5w-w8k" secondAttribute="top" constant="35" id="fwb-1o-3x4"/>
+                                    <constraint firstItem="XlK-lJ-Cds" firstAttribute="top" secondItem="dZg-Y9-Xol" secondAttribute="bottom" constant="2" id="q5m-qG-SXn"/>
+                                    <constraint firstItem="tz8-v9-3E8" firstAttribute="top" secondItem="XlK-lJ-Cds" secondAttribute="bottom" constant="10" id="ux7-7F-zTH"/>
+                                    <constraint firstItem="Kk1-nz-cju" firstAttribute="centerX" secondItem="HRx-f7-zGX" secondAttribute="centerX" id="z4T-JO-EeQ"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -270,7 +294,6 @@
         <scene sceneID="yl2-sM-qoP">
             <objects>
                 <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
-                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
