@@ -75,6 +75,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         var thumbnail: String? = "";
         var itemType: String? = "";
         var id : String? = "";
+        var timeLabel: String? = "";
         
         for items in xmlItems {
             
@@ -102,6 +103,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             if let datathumbnail = datan["ns5:thumbnail"].element?.text {
                 thumbnail = datathumbnail
             }
+            if let dataTimeLabel = datan["ns5:presentation"]["pres:item"]["pres:context"]["pres:timeLabel"].element?.text{
+                timeLabel = dataTimeLabel
+                //print(dataTimeLabel)
+                
+            }
             
             
             var coordniates = datan["ns5:presentation"]["pres:item"]["georss:where"]["gml:Point"]["gml:coordinates"].element!.text!
@@ -124,6 +130,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             item.thumbnail = thumbnail!
             item.lat = lat
             item.lng = long
+            item.timeLabel = timeLabel!
             
             //Save item to realm if item has long/lat
             do {
@@ -137,7 +144,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             
             let realm = try! Realm()
             let items = realm.objects(Item)
-            //print(items)
+            print(items)
             
             
         }

@@ -20,6 +20,7 @@ class Item: Object {
     dynamic var lng: Double = 0.0
     dynamic var haversine: Double = 0.0
     dynamic var discovered: Bool = false
+    dynamic var timeLabel: String = ""
     
     //dynamic var itemDescription: String = ""
 
