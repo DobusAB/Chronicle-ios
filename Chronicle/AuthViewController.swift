@@ -7,30 +7,36 @@
 //
 
 import UIKit
-import FBSDKCoreKit
-import FBSDKLoginKit
 
 class AuthViewController: UIViewController {
     
-    @IBOutlet weak var facebookButton: UIButton!
-    var chronicleBlue = UIColor(red:0.25, green:0.52, blue:1.0, alpha:1.0)
-    var facebookBlue = UIColor(red:0.23, green:0.35, blue:0.6, alpha:1.0)
+
+    @IBOutlet weak var authButton: UIButton!
+    @IBOutlet weak var botImage: UIImageView!
+
 
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        if (FBSDKAccessToken.currentAccessToken() != nil) {
-            print("Already logged in")
-        } else {
-            print("Please login")
-        }
+        let botOriginalY = botImage.frame.origin.y
+        authButton.backgroundColor = UIColor(red:0.32, green:0.62, blue:1.00, alpha:1.0)
+        authButton.layer.zPosition = 1
+        authButton.layer.shadowColor = UIColor.blackColor().CGColor
+        authButton.layer.shadowOffset = CGSizeMake(0, -5)
+        authButton.layer.shadowRadius = 7
+        authButton.layer.shadowOpacity = 0.5
+        
+        
+        UIView.animateWithDuration(1.0, delay:0, options: [.Repeat, .Autoreverse], animations: {
+            
+            self.botImage.layer.position.y = botOriginalY + 190
+            
+            }, completion: nil)
+        
     }
     
     override func viewWillAppear(animated: Bool) {
-        view.backgroundColor = chronicleBlue
-        facebookButton.backgroundColor = facebookBlue
-        facebookButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-        facebookButton.layer.cornerRadius = 4
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -39,22 +45,11 @@ class AuthViewController: UIViewController {
     }
     
     @IBAction func authAction(sender: AnyObject) {
-        let fbLoginManager = FBSDKLoginManager()
-        fbLoginManager.logInWithReadPermissions(["email", "public_profile"], fromViewController: self, handler: { (fbResult, error) -> Void in
-            if error == nil {
-                self.connectWithChronicle(fbResult)
-            } else {
-                //Error logging in
-                print (error)
-            }
-        })
+        
+        performSegueWithIdentifier("SetupSegue", sender: self)
+        
     }
     
-    func connectWithChronicle(fbResult: FBSDKLoginManagerLoginResult) {
-        print(fbResult.token.tokenString)
-        //
-    }
-
     /*
     // MARK: - Navigation
 

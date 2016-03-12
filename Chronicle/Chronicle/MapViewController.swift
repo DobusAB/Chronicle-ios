@@ -8,7 +8,7 @@
 
 import UIKit
 import RealmSwift
-import RealmMapView
+//import RealmMapView
 import MapKit
 
 class MapViewController: UIViewController, MKMapViewDelegate {
