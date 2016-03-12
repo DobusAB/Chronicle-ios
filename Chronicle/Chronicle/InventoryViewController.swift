@@ -13,6 +13,9 @@ import SDWebImage
 class InventoryViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     var itemsArray = [Item]()
     
+    @IBOutlet weak var currentProgress: UIProgressView!
+    @IBOutlet weak var currentLevel: UILabel!
+    @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var collectionVIew: UICollectionView!
     @IBOutlet weak var itemImage: UIImageView!
     override func viewDidLoad() {
@@ -67,7 +70,7 @@ class InventoryViewController: UIViewController, UICollectionViewDataSource, UIC
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSize(width: 100, height: 100)
+        return CGSize(width: 105, height: 105)
     }
     
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9pv-A4-QxB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -74,16 +74,15 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QW0-QC-zQy">
                                 <rect key="frame" x="0.0" y="170" width="600" height="381"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <inset key="scrollIndicatorInsets" minX="50" minY="0.0" maxX="50" maxY="0.0"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VSU-8d-qM2">
                                     <size key="itemSize" width="150" height="150"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="15" minY="25" maxX="15" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="3sE-Rz-PB4" customClass="ItemCollectionViewCell" customModule="Chronicle" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                        <rect key="frame" x="15" y="25" width="150" height="150"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
@@ -151,7 +150,7 @@
                                         </constraints>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.90566907051282053" green="0.90566907051282053" blue="0.90566907051282053" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.97063301282051284" green="0.97063301282051284" blue="0.97063301282051284" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="dZg-Y9-Xol" firstAttribute="leading" secondItem="HRx-f7-zGX" secondAttribute="trailing" constant="40" id="0c8-DT-xHh"/>
                                     <constraint firstAttribute="height" constant="150" id="ACh-ay-XBL"/>
@@ -187,6 +186,9 @@
                     <tabBarItem key="tabBarItem" title="Ryggsäck" image="second" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="collectionVIew" destination="QW0-QC-zQy" id="zgx-jP-XFu"/>
+                        <outlet property="currentLevel" destination="XlK-lJ-Cds" id="qO0-rl-acf"/>
+                        <outlet property="currentProgress" destination="tz8-v9-3E8" id="ndq-MX-Rps"/>
+                        <outlet property="userImage" destination="Kk1-nz-cju" id="5bn-tt-1qd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
@@ -531,12 +533,12 @@
                                                 </constraints>
                                                 <variation key="default">
                                                     <mask key="constraints">
-                                                        <exclude reference="WMA-XX-pgk"/>
-                                                        <exclude reference="sP8-Bc-LTd"/>
                                                         <exclude reference="Iky-dJ-sUv"/>
                                                         <exclude reference="SRI-J7-T5o"/>
                                                         <exclude reference="ePe-6P-90a"/>
                                                         <exclude reference="w9z-qS-S36"/>
+                                                        <exclude reference="WMA-XX-pgk"/>
+                                                        <exclude reference="sP8-Bc-LTd"/>
                                                     </mask>
                                                 </variation>
                                             </view>
