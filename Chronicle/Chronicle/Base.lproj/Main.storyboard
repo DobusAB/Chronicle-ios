@@ -373,10 +373,10 @@
                                                 <rect key="frame" x="0.0" y="55" width="530" height="395"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="onf-8o-K0k">
-                                                        <rect key="frame" x="0.0" y="170" width="530" height="225"/>
+                                                        <rect key="frame" x="0.0" y="185" width="530" height="210"/>
                                                         <color key="backgroundColor" red="0.89087041884816753" green="0.89087041884816753" blue="0.89087041884816753" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="225" id="lDI-Vb-bOc"/>
+                                                            <constraint firstAttribute="height" constant="210" id="lDI-Vb-bOc"/>
                                                         </constraints>
                                                     </view>
                                                     <imageView userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="treasure-closed" translatesAutoresizingMaskIntoConstraints="NO" id="uS1-pA-nOq">
