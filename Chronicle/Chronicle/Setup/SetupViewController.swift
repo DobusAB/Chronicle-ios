@@ -85,32 +85,6 @@ class SetupViewController: UIViewController, UIImagePickerControllerDelegate, UI
         
     }
     
-    @IBAction func saveUser(sender: AnyObject) {
-        
-        let plistPath = NSBundle.mainBundle().pathForResource("User", ofType: "plist")
-        
-        let currentUserDictonary = NSDictionary(contentsOfFile: plistPath!)
-        print(currentUserDictonary)
-        
-        print(currentUserDictonary!["Username"])
-        
-        
-        //currentUserDictonary?.setValue("test", forKeyPath: "Username")
-        
-        
-        
-       
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-    }
     
     
     func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!){

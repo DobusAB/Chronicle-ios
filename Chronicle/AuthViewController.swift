@@ -11,29 +11,54 @@ import UIKit
 class AuthViewController: UIViewController {
     
 
+    @IBOutlet weak var earthView: UIImageView!
     @IBOutlet weak var authButton: UIButton!
-    @IBOutlet weak var botImage: UIImageView!
-
+    let spaceBlue = UIColor(red:0.10, green:0.11, blue:0.16, alpha:1.0)
+    let primaryBlue = UIColor(red:0.22, green:0.52, blue:0.91, alpha:1.0)
+    
 
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        let botOriginalY = botImage.frame.origin.y
-        authButton.backgroundColor = UIColor(red:0.32, green:0.62, blue:1.00, alpha:1.0)
-        authButton.layer.zPosition = 1
-        authButton.layer.shadowColor = UIColor.blackColor().CGColor
-        authButton.layer.shadowOffset = CGSizeMake(0, -5)
-        authButton.layer.shadowRadius = 7
-        authButton.layer.shadowOpacity = 0.5
+        authButton.backgroundColor = primaryBlue
+        authButton.layer.shadowColor = primaryBlue.CGColor
+        authButton.layer.shadowOffset = CGSizeMake(0, 0)
+        authButton.layer.shadowRadius = 15
+        authButton.layer.shadowOpacity = 0.9
+        authButton.layer.cornerRadius = 30
         
         
-        UIView.animateWithDuration(1.0, delay:0, options: [.Repeat, .Autoreverse], animations: {
+        let imageName = "spaceship.pdf"
+        let image = UIImage(named: imageName)
+        let imageView = UIImageView(image: image!)
+        
+        
+        imageView.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
+    
+        self.view.addSubview(imageView)
+        let bounds = CGRect(x: 0, y: 0, width: 220, height: 220)
+        let myView = UIView(frame: bounds)
+        myView.center = self.view.center
+        myView.layer.cornerRadius = bounds.width/2
+        self.view.addSubview(myView)
+        var orbit = CAKeyframeAnimation(keyPath: "position")
+        orbit.path = CGPathCreateWithEllipseInRect(myView.layer.frame, nil)
+        orbit.rotationMode = kCAAnimationRotateAuto
+        orbit.repeatCount = Float.infinity
+        orbit.duration = 40.0
+        imageView.layer.addAnimation(orbit, forKey: "orbit")
+        
+        
+        
+        
+        UIView.animateWithDuration(50, delay:0, options: [.Repeat, .Autoreverse], animations: {
             
-            self.botImage.layer.position.y = botOriginalY + 190
+            self.earthView.transform = CGAffineTransformMakeRotation(CGFloat(-360))
             
             }, completion: nil)
-        
+
     }
+    
     
     override func viewWillAppear(animated: Bool) {
         
