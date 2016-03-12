@@ -9,15 +9,19 @@
 import UIKit
 import pop
 
-class TreasureViewController: UIViewController {
+class TreasureViewController: UIViewController, UIDynamicAnimatorDelegate{
 
     @IBOutlet weak var modalContainer: UIView!
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var treasurechest: UIImageView!
     let primaryBlue = UIColor(red:0.22, green:0.52, blue:0.91, alpha:1.0)
     
+    var gravity: UIGravityBehavior!
+    var animator: UIDynamicAnimator!
+    var collision: UICollisionBehavior!
+    
     override func viewWillAppear(animated: Bool) {
-
+        
         treasurechest.userInteractionEnabled = true
         let tapRecognizer = UITapGestureRecognizer(target: self, action: Selector("imageTapped:"))
         treasurechest.addGestureRecognizer(tapRecognizer)
@@ -28,14 +32,8 @@ class TreasureViewController: UIViewController {
         closeButton.layer.shadowRadius = 15
         closeButton.layer.shadowOpacity = 0.9
         closeButton.layer.cornerRadius = 0.5 * closeButton.bounds.size.width
-        
-        
-        UIView.animateWithDuration(1.0, delay:0, options: [.Repeat, .Autoreverse], animations: {
-            
-           // self.treasurechest.layer.position.y = botOriginalY + 90
-           // self.treasurechest.layer.position.y = botOriginalY + 38
-            
-            }, completion: nil)
+    
+
     }
     
     func imageTapped(gestureRecognizer: UITapGestureRecognizer) {
@@ -52,6 +50,7 @@ class TreasureViewController: UIViewController {
         imageView.layer.opacity = 0
         treasurechest.userInteractionEnabled = false
         
+    
         UIView.animateWithDuration(0.8, delay:0, options: [], animations: {
             
             //self.treasurechest.layer.position.y = self.treasurechest.layer.position.y - 15
@@ -78,6 +77,22 @@ class TreasureViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        treasurechest.layer.position.x = modalContainer.frame.midX/2 + 5
+        treasurechest.layer.position.y = modalContainer.frame.midY - 700
+        
+        
+        animator = UIDynamicAnimator(referenceView: modalContainer)
+        gravity = UIGravityBehavior(items: [treasurechest])
+        animator.addBehavior(gravity)
+    
+        collision = UICollisionBehavior(items: [treasurechest])
+        //collision.translatesReferenceBoundsIntoBoundary = true
+        animator.addBehavior(collision)
+        
+        collision.addBoundaryWithIdentifier("barrier", fromPoint: CGPointMake(self.view.frame.origin.x, 300), toPoint: CGPointMake(self.view.frame.origin.x + self.view.frame.width, 300))
+
+
 
         // Do any additional setup after loading the view.
     }
