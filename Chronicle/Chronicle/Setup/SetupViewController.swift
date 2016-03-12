@@ -85,13 +85,29 @@ class SetupViewController: UIViewController, UIImagePickerControllerDelegate, UI
         
     }
     
-    
-    
-    func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!){
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         print("i've got an image");
+        if let pickedImage:UIImage = (info[UIImagePickerControllerOriginalImage]) as? UIImage {
+            
+            let imageData: NSData = UIImagePNGRepresentation(pickedImage)!
+            //print(imageData)
+            let url = info[UIImagePickerControllerReferenceURL] as? NSURL
+            print(url)
+//            print(info[UIImagePickerControllerReferenceURL] as! String)
+/*            if let hej = info[UIImagePickerControllerReferenceURL] as? NSURL {
+                print(hej)
+            }*/
+            
+        }
+        //print(info)
+        //let imageURL = info[UIImagePickerControllerReferenceURL] as! String
+        //print(imageURL)
+        
+        //print(editingInfo)
+        
         dismissViewControllerAnimated(true, completion: nil)
-        print(image)
-        botFaceImage.image = image
+        //print(image)
+        //botFaceImage.image = image
         
     }
     
