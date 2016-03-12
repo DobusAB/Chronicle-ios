@@ -19,6 +19,7 @@ class Item: Object {
     dynamic var lat: Double = 0.0
     dynamic var lng: Double = 0.0
     dynamic var haversine: Double = 0.0
+    dynamic var discovered: Bool = false
     
     //dynamic var itemDescription: String = ""
 
