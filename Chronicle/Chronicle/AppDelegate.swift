@@ -6,6 +6,7 @@
 //  Copyright © 2016 Dobus. All rights reserved.
 //
 
+import Foundation
 import UIKit
 import CoreLocation
 import FBSDKCoreKit
@@ -16,7 +17,7 @@ import RealmSwift
 class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
     var window: UIWindow?
     var locationManager = CLLocationManager()
-
+    var regionsToMonitor = [CLCircularRegion]()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         //Ask user for push permission
@@ -31,11 +32,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         
         //Ask for permission to read user location
         locationManager.requestAlwaysAuthorization()
+        locationManager.requestWhenInUseAuthorization()
         locationManager.delegate = self
-        locationManager.startUpdatingLocation()
-        var cl = CLLocationCoordinate2D(latitude: 56.673362789041626, longitude: 12.821966693123143)
-        var region = CLCircularRegion(center: cl, radius: 20000, identifier: "regionOne")
-        locationManager.startMonitoringForRegion(region)
+        locationManager.allowsBackgroundLocationUpdates = true
+        //locationManager.startUpdatingLocation()
+        locationManager.startMonitoringSignificantLocationChanges()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        
         
        let config = Realm.Configuration(
             // Set the new schema version. This must be greater than the previously used
@@ -105,14 +108,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
                         }
                     }
                 }
-                //Save item to realm
-                do {
-                    let realm = try Realm()
-                    try realm.write() {
-                        realm.add(item)
+                //Let see if item has long/lat
+                if item.lng == 0.0 {
+                    //print("You do not belong in this app")
+                } else {
+                    //Save item to realm if item has long/lat
+                    do {
+                        let realm = try Realm()
+                        try realm.write() {
+                            realm.add(item)
+                        }
+                    } catch {
+                        print("Something went wrong with realm!")
                     }
-                } catch {
-                    print("Something went wrong with realm!")
                 }
             }
             
@@ -121,28 +129,100 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             print("\(error)")
         }
         
-        //Lets see if stored
-        let realm = try! Realm()
-        let items = realm.objects(Item)
-        //print(items)
-        
         return true
     }
     
-    func handleRegionEvent(region: CLRegion!) {
-        print("Geofence triggered!")
+    func locationManager(manager: CLLocationManager, monitoringDidFailForRegion region: CLRegion?, withError error: NSError) {
+        print(error.localizedDescription)
     }
     
-    func locationManager(manager: CLLocationManager, didEnterRegion region: CLRegion!) {
-        if region is CLCircularRegion {
-            handleRegionEvent(region)
+    func locationManager(manager: CLLocationManager, didStartMonitoringForRegion region: CLRegion) {
+        print("Monitor started")
+        print(region)
+        locationManager.requestStateForRegion(region)
+    }
+    
+    func locationManager(manager: CLLocationManager, didDetermineState state: CLRegionState, forRegion region: CLRegion) {
+        if state == CLRegionState.Inside {
+            print("We are at region")
+        } else {
+            print("We are outside of region")
+        }
+        print(state.rawValue)
+    }
+    
+    func locationManager(manager: CLLocationManager, didEnterRegion region: CLRegion) {
+        print("DID ENTER REGION")
+        print(region.identifier)
+        sendNotification(region)
+    }
+    
+    func sendNotification(region: CLRegion) {
+        do {
+            let realm = try Realm()
+            let item = realm.objects(Item).filter("itemId == '\(region.identifier)'")[0]
+            var localn = UILocalNotification()
+            localn.alertBody = "Du hittade en skattkista: \(item.itemLabel)"
+            localn.soundName = UILocalNotificationDefaultSoundName;
+            UIApplication.sharedApplication().presentLocalNotificationNow(localn)
+        } catch {
+            print("Something went wrong with realm!")
         }
     }
     
-    func locationManager(manager: CLLocationManager, didExitRegion region: CLRegion!) {
-        if region is CLCircularRegion {
-            handleRegionEvent(region)
+    func locationManager(manager: CLLocationManager, didExitRegion region: CLRegion) {
+        print("DID EXIT REGION")
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateToLocation newLocation: CLLocation, fromLocation oldLocation: CLLocation) {
+        print("newLocation")
+        print(newLocation.coordinate.latitude)
+        for region in regionsToMonitor {
+            locationManager.stopMonitoringForRegion(region)
         }
+        regionsToMonitor.removeAll()
+        
+        let realm = try! Realm()
+        let items = realm.objects(Item)
+        for item in items {
+            let haversineDiff = haversine(newLocation.coordinate.latitude, lon1: newLocation.coordinate.longitude, lat2: item.lat, lon2: item.lng)
+            do {
+                let realm = try Realm()
+                try realm.write() {
+                    item.haversine = haversineDiff
+                    realm.add(item, update: true)
+                }
+            } catch {
+                print("Something went wrong with realm!")
+            }
+        }
+        
+        let itemSortedByHaversine = items.sort({$0.haversine < $1.haversine})
+        for (index, itemSorted) in itemSortedByHaversine.enumerate() {
+            if index < 20 {
+                let tempRegion = CLCircularRegion(center: CLLocationCoordinate2D(latitude: itemSorted.lat, longitude: itemSorted.lng), radius: 50, identifier: itemSorted.itemId)
+                regionsToMonitor.append(tempRegion)
+            }
+        }
+        
+        for region in regionsToMonitor {
+            locationManager.startMonitoringForRegion(region)
+        }
+    }
+    
+    func haversine(lat1:Double, lon1:Double, lat2:Double, lon2:Double) -> Double {
+        let lat1rad = lat1 * M_PI/180
+        let lon1rad = lon1 * M_PI/180
+        let lat2rad = lat2 * M_PI/180
+        let lon2rad = lon2 * M_PI/180
+        
+        let dLat = lat2rad - lat1rad
+        let dLon = lon2rad - lon1rad
+        let a = sin(dLat/2) * sin(dLat/2) + sin(dLon/2) * sin(dLon/2) * cos(lat1rad) * cos(lat2rad)
+        let c = 2 * asin(sqrt(a))
+        let R = 6372.8
+        
+        return R * c
     }
     
     func applicationWillResignActive(application: UIApplication) {

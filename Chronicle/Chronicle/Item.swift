@@ -18,10 +18,11 @@ class Item: Object {
     dynamic var itemDescription: String = ""
     dynamic var lat: Double = 0.0
     dynamic var lng: Double = 0.0
+    dynamic var haversine: Double = 0.0
     
     //dynamic var itemDescription: String = ""
 
-    /*override static func primaryKey() -> String {
+    override static func primaryKey() -> String {
         return "itemId"
-    }*/
+    }
 }

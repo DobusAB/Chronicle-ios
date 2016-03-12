@@ -11,7 +11,7 @@ import RealmSwift
 import RealmMapView
 import MapKit
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var mapView: MKMapView!
     
     override func viewDidLoad() {
@@ -34,17 +34,40 @@ class MapViewController: UIViewController {
             annotation.title = item.itemLabel
             self.mapView.addAnnotation(annotation)
             annotations.append(annotation)
+            addRadiusCircle(CLLocation(latitude: item.lat, longitude: item.lng))
         }
         
         //let annotations = getMapAnnotations()
         mapView.addAnnotations(annotations)
         
         
-        var localn = UILocalNotification()
+       // let region = CLCircularRegion(center: annotation.coordinate, radius: 1000, identifier: item)
+        //CLCircularRegion(center: <#T##CLLocationCoordinate2D#>, radius: <#T##CLLocationDistance#>, identifier: <#T##String#>)
+        
+        
+        /*var localn = UILocalNotification()
         localn.alertBody = "Hellåå"
         localn.soundName = UILocalNotificationDefaultSoundName;
-        UIApplication.sharedApplication().presentLocalNotificationNow(localn)
+        UIApplication.sharedApplication().presentLocalNotificationNow(localn)*/
 
+    }
+    
+    func addRadiusCircle(location: CLLocation){
+        self.mapView.delegate = self
+        var circle = MKCircle(centerCoordinate: location.coordinate, radius: 50 as CLLocationDistance)
+        self.mapView.addOverlay(circle)
+    }
+    
+    func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
+        if overlay is MKCircle {
+            var circle = MKCircleRenderer(overlay: overlay)
+            circle.strokeColor = UIColor.redColor()
+            circle.fillColor = UIColor(red: 255, green: 0, blue: 0, alpha: 0.1)
+            circle.lineWidth = 1
+            return circle
+        } else {
+            return nil
+        }
     }
 
     override func didReceiveMemoryWarning() {
