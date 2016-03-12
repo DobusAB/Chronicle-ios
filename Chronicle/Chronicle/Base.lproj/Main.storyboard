@@ -99,8 +99,12 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" progress="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="tz8-v9-3E8">
-                                        <rect key="frame" x="190" y="87" width="75" height="2"/>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" misplaced="YES" placeholderIntrinsicWidth="120" placeholderIntrinsicHeight="15" progressViewStyle="bar" progress="0.90000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="tz8-v9-3E8">
+                                        <rect key="frame" x="190" y="87" width="120" height="11"/>
+                                        <color key="backgroundColor" red="0.66072889400000001" green="0.66072889400000001" blue="0.66072889400000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="10" id="cDF-3O-UGA"/>
+                                        </constraints>
                                     </progressView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kk1-nz-cju">
                                         <rect key="frame" x="55" y="30" width="65" height="65"/>
@@ -136,7 +140,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="3sE-Rz-PB4" customClass="ItemCollectionViewCell" customModule="Chronicle" customModuleProvider="target">
-                                        <rect key="frame" x="15" y="74" width="150" height="150"/>
+                                        <rect key="frame" x="15" y="10" width="150" height="150"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>

@@ -20,6 +20,9 @@ class InventoryViewController: UIViewController, UICollectionViewDataSource, UIC
     @IBOutlet weak var itemImage: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        currentProgress.progress = 0.8
         let realm = try! Realm()
         let items = realm.objects(Item)
         for item in items {
