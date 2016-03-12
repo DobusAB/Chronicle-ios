@@ -55,6 +55,17 @@ class InventoryViewController: UIViewController, UICollectionViewDataSource, UIC
         return cell
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "detailSegue" {
+            let detailController = segue.destinationViewController as! DetailViewController
+            let cell = sender as! UICollectionViewCell
+            if let indexPath = collectionVIew.indexPathForCell(cell){
+                let id = itemsArray[indexPath.row].itemId
+                detailController.itemId = id
+            }
+        }
+    }
+    
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         return CGSize(width: 100, height: 100)
     }

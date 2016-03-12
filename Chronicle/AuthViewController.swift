@@ -25,7 +25,7 @@ class AuthViewController: UIViewController {
         authButton.layer.shadowOffset = CGSizeMake(0, 0)
         authButton.layer.shadowRadius = 15
         authButton.layer.shadowOpacity = 0.9
-        authButton.layer.cornerRadius = 30
+        authButton.layer.cornerRadius = 27
         
         
         

@@ -16,7 +16,6 @@ class SetupViewController: UIViewController, UIImagePickerControllerDelegate, UI
     @IBOutlet weak var shadowImage: UIImageView!
     @IBOutlet weak var botFaceImage: UIImageView!
     @IBOutlet weak var addProfileImageButton: UIButton!
-    @IBOutlet weak var earthImage: UIImageView!
     
     let primaryBlue = UIColor(red:0.22, green:0.52, blue:0.91, alpha:1.0)
     let imagePicker = UIImagePickerController()
@@ -26,7 +25,7 @@ class SetupViewController: UIViewController, UIImagePickerControllerDelegate, UI
         
         let botOriginalY = botImage.frame.origin.y
         view.backgroundColor = UIColor(red:0.98, green:0.98, blue:0.98, alpha:1.0)
-        setupButton.layer.cornerRadius = 30
+        setupButton.layer.cornerRadius = 27
         let border = CALayer()
         let width = CGFloat(2.0)
         border.borderColor = UIColor.darkGrayColor().CGColor

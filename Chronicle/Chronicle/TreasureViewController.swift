@@ -17,6 +17,8 @@ class TreasureViewController: UIViewController, UIDynamicAnimatorDelegate{
     @IBOutlet weak var cardContainer: UIView!
     let primaryBlue = UIColor(red:0.22, green:0.52, blue:0.91, alpha:1.0)
     
+    @IBOutlet weak var cardFooterLabel: UILabel!
+    @IBOutlet weak var cardFooter: UIView!
     var gravity: UIGravityBehavior!
     var animator: UIDynamicAnimator!
     var collision: UICollisionBehavior!
@@ -35,6 +37,7 @@ class TreasureViewController: UIViewController, UIDynamicAnimatorDelegate{
         closeButton.layer.cornerRadius = 0.5 * closeButton.bounds.size.width
         cardContainer.layer.cornerRadius = 4
         cardContainer.clipsToBounds = true
+        cardFooter.backgroundColor = primaryBlue
     
 
     }
