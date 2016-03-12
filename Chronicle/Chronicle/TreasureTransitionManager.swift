@@ -46,7 +46,7 @@ class TreasureTransitionManager: NSObject, UIViewControllerAnimatedTransitioning
         // prepare the menu
         if (self.presenting){
             menuView.alpha = 0
-            menuViewController.walkthroughModalContainer.transform = offstageTop
+            menuViewController.modalContainer.transform = offstageTop
             
         }
         
@@ -71,7 +71,7 @@ class TreasureTransitionManager: NSObject, UIViewControllerAnimatedTransitioning
                 spring.toValue = 0
                 spring.springBounciness = 10
                 spring.springSpeed = 8
-                menuViewController.walkthroughModalContainer.layer.pop_addAnimation(spring, forKey: "moveUp")
+                menuViewController.modalContainer.layer.pop_addAnimation(spring, forKey: "moveUp")
             }
             else {
                 // fade out
@@ -81,7 +81,7 @@ class TreasureTransitionManager: NSObject, UIViewControllerAnimatedTransitioning
                 spring.toValue = -700
                 spring.springBounciness = 10
                 spring.springSpeed = 8
-                menuViewController.walkthroughModalContainer.layer.pop_addAnimation(spring, forKey: "moveUp")
+                menuViewController.modalContainer.layer.pop_addAnimation(spring, forKey: "moveUp")
                 menuView.alpha = 0
                 
             }

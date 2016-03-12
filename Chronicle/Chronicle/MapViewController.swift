@@ -14,6 +14,9 @@ import MapKit
 class MapViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var mapView: MKMapView!
     
+    let treasureTransitionmanager = TreasureTransitionManager()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.showsUserLocation = true
@@ -56,7 +59,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         
         let vc = self.storyboard?.instantiateViewControllerWithIdentifier("TreasureViewController") as! TreasureViewController
         vc.modalPresentationStyle = UIModalPresentationStyle.Custom
-        vc.transitioningDelegate = TreasureTransitionManager
+        vc.transitioningDelegate = treasureTransitionmanager
         self.presentViewController(vc, animated: true, completion: nil)
         
         

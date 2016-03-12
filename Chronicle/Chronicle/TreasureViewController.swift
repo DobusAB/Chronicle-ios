@@ -10,6 +10,8 @@ import UIKit
 
 class TreasureViewController: UIViewController {
 
+    @IBOutlet weak var modalContainer: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -314,7 +314,7 @@
         <!--Treasure View Controller-->
         <scene sceneID="Lge-AW-rZJ">
             <objects>
-                <viewController storyboardIdentifier="TreasureViewController" modalPresentationStyle="overCurrentContext" id="9aC-hy-zMZ" customClass="TreasureViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TreasureViewController" modalPresentationStyle="overCurrentContext" id="9aC-hy-zMZ" customClass="TreasureViewController" customModule="Chronicle" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FL0-Ic-yho"/>
                         <viewControllerLayoutGuide type="bottom" id="DpI-0t-RkR"/>
@@ -323,10 +323,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cHc-VK-Eo6">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cHc-VK-Eo6">
                                 <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tOh-af-T3x">
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tOh-af-T3x">
                                         <rect key="frame" x="20" y="104" width="560" height="373"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="walkthrough" translatesAutoresizingMaskIntoConstraints="NO" id="Vpp-KB-GSR">
@@ -418,15 +418,15 @@
                                             <mask key="constraints">
                                                 <exclude reference="srO-x7-6bJ"/>
                                                 <exclude reference="yrM-kT-oN8"/>
-                                                <exclude reference="pnI-jx-DKB"/>
+                                                <exclude reference="8vX-vL-tBB"/>
                                                 <exclude reference="Kps-wf-KTX"/>
                                                 <exclude reference="Phj-kf-j8b"/>
+                                                <exclude reference="pnI-jx-DKB"/>
                                                 <exclude reference="qUe-8d-y9a"/>
-                                                <exclude reference="8vX-vL-tBB"/>
-                                                <exclude reference="ZTh-St-8KK"/>
                                                 <exclude reference="2OY-LZ-bBx"/>
-                                                <exclude reference="udZ-TJ-h3b"/>
+                                                <exclude reference="ZTh-St-8KK"/>
                                                 <exclude reference="snE-OE-7zw"/>
+                                                <exclude reference="udZ-TJ-h3b"/>
                                                 <exclude reference="Xhs-C7-LyV"/>
                                                 <exclude reference="bQY-sW-pa4"/>
                                             </mask>
@@ -446,11 +446,11 @@
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="Euq-36-ypF"/>
                                         <exclude reference="BYe-rG-OZF"/>
-                                        <exclude reference="sdq-hd-Gc9"/>
+                                        <exclude reference="Euq-36-ypF"/>
                                         <exclude reference="OP2-eR-F9B"/>
                                         <exclude reference="cZI-Pq-GGG"/>
+                                        <exclude reference="sdq-hd-Gc9"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -463,6 +463,9 @@
                             <constraint firstItem="DpI-0t-RkR" firstAttribute="top" secondItem="cHc-VK-Eo6" secondAttribute="bottom" id="iFU-74-o0k"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="modalContainer" destination="tOh-af-T3x" id="6D4-cY-xWS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ekQ-cn-f6N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
