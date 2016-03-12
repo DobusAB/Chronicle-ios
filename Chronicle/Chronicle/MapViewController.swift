@@ -40,7 +40,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             let annotation = CustomPointAnnotation()
             annotation.coordinate = CLLocationCoordinate2D(latitude: item.lat, longitude: item.lng)
             annotation.title = item.itemLabel
-            //annotation.imageName = user?.image as! String
+            annotation.imageName = "treasure-pin"
             self.mapView.addAnnotation(annotation)
             annotations.append(annotation)
             addRadiusCircle(CLLocation(latitude: item.lat, longitude: item.lng))
@@ -116,7 +116,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         //the view is dequeued or created...
         
         let cpa = annotation as! CustomPointAnnotation
-        anView!.image = UIImage(named: "earth")
+        anView!.image = UIImage(named: cpa.imageName)
         
         return anView
     }
