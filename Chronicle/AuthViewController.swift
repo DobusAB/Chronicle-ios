@@ -28,30 +28,8 @@ class AuthViewController: UIViewController {
         authButton.layer.cornerRadius = 30
         
         
-        let imageName = "spaceship.pdf"
-        let image = UIImage(named: imageName)
-        let imageView = UIImageView(image: image!)
         
-        
-        imageView.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
-    
-        self.view.addSubview(imageView)
-        let bounds = CGRect(x: 0, y: 0, width: 220, height: 220)
-        let myView = UIView(frame: bounds)
-        myView.center = self.view.center
-        myView.layer.cornerRadius = bounds.width/2
-        self.view.addSubview(myView)
-        var orbit = CAKeyframeAnimation(keyPath: "position")
-        orbit.path = CGPathCreateWithEllipseInRect(myView.layer.frame, nil)
-        orbit.rotationMode = kCAAnimationRotateAuto
-        orbit.repeatCount = Float.infinity
-        orbit.duration = 40.0
-        imageView.layer.addAnimation(orbit, forKey: "orbit")
-        
-        
-        
-        
-        UIView.animateWithDuration(50, delay:0, options: [.Repeat, .Autoreverse], animations: {
+        UIView.animateWithDuration(70, delay:0, options: [.Repeat, .Autoreverse], animations: {
             
             self.earthView.transform = CGAffineTransformMakeRotation(CGFloat(-360))
             
@@ -61,6 +39,31 @@ class AuthViewController: UIViewController {
     
     
     override func viewWillAppear(animated: Bool) {
+        
+        let imageName = "spaceship.pdf"
+        let image = UIImage(named: imageName)
+        let imageView = UIImageView(image: image!)
+        
+        
+        imageView.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
+        
+        self.view.addSubview(imageView)
+        let bounds = CGRect(x: 0, y: 0, width: 220, height: 220)
+        let myView = UIView(frame: bounds)
+        myView.center = self.view.center
+        myView.layer.cornerRadius = bounds.width/2
+        self.view.addSubview(myView)
+        var orbit = CAKeyframeAnimation(keyPath: "position")
+        orbit.fillMode = kCAGravityBottomRight
+        orbit.path = CGPathCreateWithEllipseInRect(myView.layer.frame, nil)
+        orbit.rotationMode = kCAAnimationRotateAuto
+        orbit.removedOnCompletion = false
+        orbit.repeatCount = Float.infinity
+        orbit.duration = 80
+        imageView.layer.addAnimation(orbit, forKey: "orbit")
+
+        
+        
         
     }
     

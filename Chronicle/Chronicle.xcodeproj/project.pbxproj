@@ -13,6 +13,8 @@
 		5584A3911C820D2F00494732 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584A3901C820D2F00494732 /* MapViewController.swift */; };
 		55A726881C81E20300C52517 /* data1.xml in Resources */ = {isa = PBXBuildFile; fileRef = 55A726871C81E20300C52517 /* data1.xml */; };
 		B10C81531C8B39920070C93A /* User.plist in Resources */ = {isa = PBXBuildFile; fileRef = B10C81521C8B39920070C93A /* User.plist */; };
+		B17A64A91C94481E002B68C4 /* TreasureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17A64A81C94481E002B68C4 /* TreasureViewController.swift */; };
+		B17A64AC1C9449C2002B68C4 /* TreasureTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17A64AB1C9449C2002B68C4 /* TreasureTransitionManager.swift */; };
 		B1D0237D1C8B1E80003C0EAC /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D0237C1C8B1E80003C0EAC /* SetupViewController.swift */; };
 		B1E561761C676C1E0034C491 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E561751C676C1E0034C491 /* AppDelegate.swift */; };
 		B1E5617D1C676C1E0034C491 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1E5617B1C676C1E0034C491 /* Main.storyboard */; };
@@ -51,6 +53,8 @@
 		55A726871C81E20300C52517 /* data1.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = data1.xml; sourceTree = "<group>"; };
 		92FBA7DF35460F35A8BC7D1C /* Pods-Chronicle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chronicle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Chronicle/Pods-Chronicle.debug.xcconfig"; sourceTree = "<group>"; };
 		B10C81521C8B39920070C93A /* User.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = User.plist; sourceTree = "<group>"; };
+		B17A64A81C94481E002B68C4 /* TreasureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TreasureViewController.swift; path = Chronicle/TreasureViewController.swift; sourceTree = "<group>"; };
+		B17A64AB1C9449C2002B68C4 /* TreasureTransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreasureTransitionManager.swift; sourceTree = "<group>"; };
 		B1D0237C1C8B1E80003C0EAC /* SetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetupViewController.swift; path = Setup/SetupViewController.swift; sourceTree = "<group>"; };
 		B1E561721C676C1E0034C491 /* Chronicle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chronicle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1E561751C676C1E0034C491 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -120,6 +124,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B17A64AA1C94482F002B68C4 /* Treasure */ = {
+			isa = PBXGroup;
+			children = (
+				B17A64A81C94481E002B68C4 /* TreasureViewController.swift */,
+			);
+			name = Treasure;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		B1E561691C676C1E0034C491 = {
 			isa = PBXGroup;
 			children = (
@@ -146,10 +159,12 @@
 			isa = PBXGroup;
 			children = (
 				B1E561AD1C676E050034C491 /* Auth */,
+				B17A64AA1C94482F002B68C4 /* Treasure */,
 				5584A38D1C81F24400494732 /* Model */,
 				B1E561751C676C1E0034C491 /* AppDelegate.swift */,
 				5584A3901C820D2F00494732 /* MapViewController.swift */,
 				B1E5617B1C676C1E0034C491 /* Main.storyboard */,
+				B17A64AB1C9449C2002B68C4 /* TreasureTransitionManager.swift */,
 				B1E5617E1C676C1E0034C491 /* Assets.xcassets */,
 				B1E561801C676C1E0034C491 /* LaunchScreen.storyboard */,
 				B1E561831C676C1E0034C491 /* Info.plist */,
@@ -384,11 +399,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B17A64AC1C9449C2002B68C4 /* TreasureTransitionManager.swift in Sources */,
 				B1E561AC1C676D860034C491 /* AuthViewController.swift in Sources */,
 				5584A38F1C81F25D00494732 /* Item.swift in Sources */,
 				B1E561761C676C1E0034C491 /* AppDelegate.swift in Sources */,
 				5584A3911C820D2F00494732 /* MapViewController.swift in Sources */,
 				B1D0237D1C8B1E80003C0EAC /* SetupViewController.swift in Sources */,
+				B17A64A91C94481E002B68C4 /* TreasureViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

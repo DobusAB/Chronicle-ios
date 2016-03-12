@@ -52,6 +52,17 @@ class MapViewController: UIViewController, MKMapViewDelegate {
 
     }
     
+    @IBAction func openTreasureModal(sender: AnyObject) {
+        
+        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("TreasureViewController") as! TreasureViewController
+        vc.modalPresentationStyle = UIModalPresentationStyle.Custom
+        vc.transitioningDelegate = TreasureTransitionManager
+        self.presentViewController(vc, animated: true, completion: nil)
+        
+        
+    }
+    
+    
     func addRadiusCircle(location: CLLocation){
         self.mapView.delegate = self
         var circle = MKCircle(centerCoordinate: location.coordinate, radius: 50 as CLLocationDistance)
