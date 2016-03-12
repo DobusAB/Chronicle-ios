@@ -13,12 +13,11 @@ import MapKit
 
 class MapViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var mapView: MKMapView!
-    
     let treasureTransitionmanager = TreasureTransitionManager()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        mapView.delegate = self
         mapView.showsUserLocation = true
         
         //let location = CLLocationCoordinate2D(latitude: 56.6890642598087, longitude: 12.8339380955437)
@@ -28,17 +27,25 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         let realm = try! Realm()
         let items = realm.objects(Item)
         var annotations = [MKPointAnnotation]();
+        let user = realm.objects(User).first
         //print(items)
         
+        let annotation = CustomPointAnnotation()
+        annotation.coordinate = CLLocationCoordinate2D(latitude: 56.6890642598087, longitude: 12.8339380955437)
+        annotation.title = "heheh"
+        //annotation.imageName = user?.image as! String
+        self.mapView.addAnnotation(annotation)
         
-        for item in items {
-            var annotation = MKPointAnnotation()
-            annotation.coordinate = CLLocationCoordinate2D(latitude: item.lat, longitude: item.lng)
+        
+        /*for item in items {
+            let annotation = CustomPointAnnotation()
+            annotation.coordinate = CLLocationCoordinate2D(latitude: 56.6890642598087, longitude: 12.8339380955437)
             annotation.title = item.itemLabel
+            annotation.imageName = user?.image as! String
             self.mapView.addAnnotation(annotation)
             annotations.append(annotation)
             addRadiusCircle(CLLocation(latitude: item.lat, longitude: item.lng))
-        }
+        }*/
         
         //let annotations = getMapAnnotations()
         mapView.addAnnotations(annotations)
@@ -54,6 +61,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         UIApplication.sharedApplication().presentLocalNotificationNow(localn)*/
 
     }
+    
     
     @IBAction func openTreasureModal(sender: AnyObject) {
         
@@ -87,6 +95,31 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+        print("Should render")
+        if !(annotation is CustomPointAnnotation) {
+            return nil
+        }
+        
+        let reuseId = "test"
+        var anView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId)
+        if anView == nil {
+            anView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+            anView!.canShowCallout = true
+        }
+        else {
+            anView!.annotation = annotation
+        }
+        
+        //Set annotation-specific properties **AFTER**
+        //the view is dequeued or created...
+        
+        let cpa = annotation as! CustomPointAnnotation
+        anView!.image = UIImage(named: "earth")
+        
+        return anView
     }
     
 

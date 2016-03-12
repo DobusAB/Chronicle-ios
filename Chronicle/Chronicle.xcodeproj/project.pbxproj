@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0473E8E51C8B5C1C00F5F8F1 /* UserData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0473E8E41C8B5C1C00F5F8F1 /* UserData.plist */; };
 		049519221C9429EF00210E5B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049519211C9429EF00210E5B /* User.swift */; };
+		55055F841C94546D008ABC43 /* CustomPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55055F831C94546D008ABC43 /* CustomPointAnnotation.swift */; };
 		557529311C821C940036FB01 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 557529301C821C940036FB01 /* MapKit.framework */; };
 		5584A38F1C81F25D00494732 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584A38E1C81F25D00494732 /* Item.swift */; };
 		5584A3911C820D2F00494732 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584A3901C820D2F00494732 /* MapViewController.swift */; };
@@ -49,6 +50,7 @@
 		049519211C9429EF00210E5B /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		23115E31E50E5B3F20E0138A /* Pods-Chronicle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chronicle.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chronicle/Pods-Chronicle.release.xcconfig"; sourceTree = "<group>"; };
 		46FA4654FBF9BEE378D87399 /* Pods_Chronicle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chronicle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		55055F831C94546D008ABC43 /* CustomPointAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPointAnnotation.swift; sourceTree = "<group>"; };
 		557529301C821C940036FB01 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		5584A38E1C81F25D00494732 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		5584A3901C820D2F00494732 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				B10C81521C8B39920070C93A /* User.plist */,
 				0473E8E41C8B5C1C00F5F8F1 /* UserData.plist */,
 				55A726871C81E20300C52517 /* data1.xml */,
+				55055F831C94546D008ABC43 /* CustomPointAnnotation.swift */,
 			);
 			path = Chronicle;
 			sourceTree = "<group>";
@@ -409,6 +412,7 @@
 				5584A3911C820D2F00494732 /* MapViewController.swift in Sources */,
 				B1D0237D1C8B1E80003C0EAC /* SetupViewController.swift in Sources */,
 				B17A64A91C94481E002B68C4 /* TreasureViewController.swift in Sources */,
+				55055F841C94546D008ABC43 /* CustomPointAnnotation.swift in Sources */,
 				049519221C9429EF00210E5B /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

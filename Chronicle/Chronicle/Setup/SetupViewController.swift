@@ -105,8 +105,7 @@ class SetupViewController: UIViewController, UIImagePickerControllerDelegate, UI
     }
 
     @IBAction func activateBot(sender: AnyObject) {
-        //activateBotSegue
-        print("test")
+        self.performSegueWithIdentifier("activateBotSegue", sender: nil)
     }
 
     /*
