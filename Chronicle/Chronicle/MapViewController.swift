@@ -36,7 +36,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         //annotation.imageName = user?.image as! String
         self.mapView.addAnnotation(annotation)
         
-        
         /*for item in items {
             let annotation = CustomPointAnnotation()
             annotation.coordinate = CLLocationCoordinate2D(latitude: 56.6890642598087, longitude: 12.8339380955437)
