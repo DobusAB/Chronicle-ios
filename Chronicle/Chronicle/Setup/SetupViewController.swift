@@ -104,6 +104,10 @@ class SetupViewController: UIViewController, UIImagePickerControllerDelegate, UI
         super.didReceiveMemoryWarning()
     }
 
+    @IBAction func activateBot(sender: AnyObject) {
+        //activateBotSegue
+        print("test")
+    }
 
     /*
     // MARK: - Navigation
