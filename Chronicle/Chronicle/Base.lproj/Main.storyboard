@@ -103,6 +103,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="ItemImage" destination="Lf3-N3-uqq" id="1bj-Eq-j6t"/>
+                                            <segue destination="djb-2V-dH1" kind="showDetail" identifier="detailSegue" id="vIx-sz-i2z"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -186,7 +187,6 @@
                     <tabBarItem key="tabBarItem" title="Ryggsäck" image="second" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="collectionVIew" destination="QW0-QC-zQy" id="zgx-jP-XFu"/>
-                        <segue destination="djb-2V-dH1" kind="showDetail" identifier="detailSegue" id="S0e-HX-nGO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>

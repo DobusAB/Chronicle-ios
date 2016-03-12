@@ -57,7 +57,12 @@ class InventoryViewController: UIViewController, UICollectionViewDataSource, UIC
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "detailSegue" {
-            
+            let detailController = segue.destinationViewController as! DetailViewController
+            let cell = sender as! UICollectionViewCell
+            if let indexPath = collectionVIew.indexPathForCell(cell){
+                print(indexPath)
+            }
+            print("Nooo")
         }
     }
     
