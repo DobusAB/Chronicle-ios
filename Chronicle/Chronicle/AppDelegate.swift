@@ -63,7 +63,60 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             print("Something went wrong with realm!")
         }
         
+        let xmlPath = NSBundle.mainBundle().pathForResource("data1", ofType: "xml")
         
+        let data = NSData(contentsOfFile: xmlPath!)
+        var arr = [];
+        let xml = SWXMLHash.lazy(data!)
+        let xmlItems = xml["result"]["records"]["record"]
+        var lat: Double = 0.0;
+        var long: Double = 0.0;
+        
+        for items in xmlItems {
+            
+            /*for description in items["rdf:RDF"]["rdf:Description"] {
+                print(description["ns5:presentation"]["pres:item"]["pres:id"].element?.text)
+            }*/
+            var data = items["rdf:RDF"]["rdf:Description"][0]["ns5:presentation"]["pres:item"]
+            var id = data["pres:id"].element?.text
+            var itemlabel = data["pres:itemLabel"].element?.text
+            var itemType = data["pres:type"].element?.text
+            var itemDescription = data["pres:description"].element?.text
+            var thumbnail = data["pres:image"]["pres:src"][1].element?.text
+            var coordniates = data["georss:where"]["gml:Point"]["gml:coordinates"].element!.text!
+            
+            //var coordinatesArr = split(coordniates) {$0 == ","}
+            var splited = coordniates.characters.split{ $0 == "," }.map(String.init)
+            
+            if let lng = splited[0] as? Double {
+                var long = lng
+            }
+            if let lt = splited[0] as? Double {
+                var lat = lt
+            }
+            
+            let item = Item()
+            
+            item.itemId = id!
+            //item.itemLabel = itemlabel!
+            //item.itemType = itemType!
+            //item.itemDescription = itemDescription!
+            //item.thumbnail = thumbnail!
+            item.lat = lat
+            item.lng = long
+            
+            //Save item to realm if item has long/lat
+            do {
+                let realm = try Realm()
+                try realm.write() {
+                    realm.add(item)
+                }
+            } catch {
+                print("Something went wrong with realm!")
+            }
+            
+            
+        }
         
         // Override point for customization after application launch.
         /*guard let
