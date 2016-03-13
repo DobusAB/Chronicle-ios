@@ -67,7 +67,11 @@ class TreasureViewController: UIViewController, UIDynamicAnimatorDelegate{
         
         let imageView = UIImageView(image: image!)
         self.treasurechest.addSubview(imageView)
-        imageView.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        imageView.frame = CGRect(x: 0, y: 0, width: 70, height: 70)
+        imageView.layer.cornerRadius = 4
+        imageView.clipsToBounds = true
+        imageView.layer.borderWidth = 5
+        imageView.layer.borderColor = UIColor(red:1.00, green:1.00, blue:1.00, alpha:0.5).CGColor
         imageView.center = CGPointMake(treasurechest.frame.size.width  / 2,
             treasurechest.frame.size.height / 2 - 20)
         imageView.layer.opacity = 0
@@ -75,8 +79,6 @@ class TreasureViewController: UIViewController, UIDynamicAnimatorDelegate{
         
     
         UIView.animateWithDuration(0.8, delay:0, options: [], animations: {
-            
-            //self.treasurechest.layer.position.y = self.treasurechest.layer.position.y - 15
             
             let spring = POPSpringAnimation(propertyNamed: kPOPLayerTranslationY)
             spring.fromValue = 0
@@ -96,6 +98,8 @@ class TreasureViewController: UIViewController, UIDynamicAnimatorDelegate{
         
         treasurechest.image = UIImage(named: "treasure-open")
         print("Chest just opened")
+        cardFooterLabel.text = item.itemLabel.capitalizedString + " hittades!"
+        
     }
     
     override func viewDidLoad() {
