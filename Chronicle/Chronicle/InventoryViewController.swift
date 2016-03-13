@@ -71,7 +71,7 @@ class InventoryViewController: UIViewController, UICollectionViewDataSource, UIC
         cell.yearLabel.backgroundColor = primaryBlue
         cell.yearLabel.layer.cornerRadius = 12
         cell.layer.cornerRadius = 15
-        cell.backgroundColor = primaryBlue
+        cell.backgroundColor = UIColor(red:0.88, green:0.88, blue:0.88, alpha:1.0)//primaryBlue
         cell.layer.cornerRadius = 4
         cell.photoBg.layer.cornerRadius = 2
         let itemLabelArr = itemsArray[indexPath.row].timeLabel.characters.split{$0 == " "}.map(String.init)

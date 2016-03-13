@@ -35,7 +35,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         for item in items {
             let annotation = CustomPointAnnotation()
             annotation.coordinate = CLLocationCoordinate2D(latitude: item.lat, longitude: item.lng)
-            annotation.title = item.itemLabel
+            //annotation.title = item.itemLabel
             annotation.imageName = "treasure-pin"
             annotations.append(annotation)
             addRadiusCircle(CLLocation(latitude: item.lat, longitude: item.lng))
