@@ -8,6 +8,7 @@ target 'Chronicle' do
 	pod 'RealmSwift', '~> 0.98'
 	pod 'SDWebImage', '~> 3.7'
 	pod 'pop', '~> 1.0'
+	pod 'JSON', '~> 4.0'
 end
 
 target 'ChronicleTests' do
