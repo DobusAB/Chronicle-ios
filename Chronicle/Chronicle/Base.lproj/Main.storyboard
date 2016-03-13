@@ -349,6 +349,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="detailImageView" destination="Guw-95-M7N" id="edv-AR-VF4"/>
+                        <outlet property="detailInfoContainer" destination="4eu-B8-PSm" id="v1m-t6-0cw"/>
                         <outlet property="detailName" destination="8Mp-db-2w2" id="Cia-SK-9ZG"/>
                         <outlet property="itemDetail" destination="MyK-zn-PBO" id="QQi-Qv-0Ga"/>
                     </connections>

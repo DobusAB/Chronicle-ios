@@ -13,9 +13,20 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var detailImageView: UIImageView!
     
     @IBOutlet weak var detailName: UILabel!
+    @IBOutlet weak var detailInfoContainer: UIView!
     
     @IBOutlet weak var itemDetail: UILabel!
     var itemId: String = ""
+    
+    
+    override func viewWillAppear(animated: Bool) {
+        
+        detailInfoContainer.layer.shadowOffset = CGSizeMake(0, -10)
+        detailInfoContainer.layer.shadowRadius = 5
+        detailInfoContainer.layer.shadowOpacity = 0.25
+        detailInfoContainer.layer.shadowColor = UIColor.blackColor().CGColor
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
