@@ -12,26 +12,27 @@ import SDWebImage
 
 class InventoryViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     var itemsArray = [Item]()
-    
     @IBOutlet weak var currentProgress: UIProgressView!
     @IBOutlet weak var currentLevel: UILabel!
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var collectionVIew: UICollectionView!
     @IBOutlet weak var itemImage: UIImageView!
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        
-        currentProgress.progress = 0.8
+    
+    override func viewWillAppear(animated: Bool) {
+        itemsArray.removeAll()
         let realm = try! Realm()
-        let items = realm.objects(Item)
+        let items = realm.objects(Item).filter("discovered = true")
         for item in items {
             itemsArray.append(item)
+            print(item.itemLabel)
         }
         self.collectionVIew.reloadData()
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        currentProgress.progress = 0.8
         getData()
-        
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,17 +40,12 @@ class InventoryViewController: UIViewController, UICollectionViewDataSource, UIC
         // Dispose of any resources that can be recreated.
     }
     
-    func getData(){
-        
+    func getData() {
         let realm = try! Realm()
-        var user = realm.objects(User).first
-        user?.image
-        print(user)
-       // userImage.sd_setImageWithURL(user?.image, completed: nil)
-        
-        
+        var user = realm.objects(User).first!
+        var imgData = NSData(contentsOfFile: user.image)
+        userImage.image = UIImage(data: imgData!)
     }
-
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1

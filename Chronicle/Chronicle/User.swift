@@ -12,7 +12,7 @@ import RealmSwift
 
 class User: Object {
     dynamic var userId: String = ""
-    dynamic var image: NSString = ""
+    dynamic var image: String = ""
     
     override static func primaryKey() -> String {
         return "userId"
