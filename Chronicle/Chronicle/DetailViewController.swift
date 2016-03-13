@@ -47,21 +47,11 @@ class DetailViewController: UIViewController {
         let url = NSURL(string: item[0].thumbnail)
         
         detailImageView.sd_setImageWithURL(url, completed: nil)
-        
         detailName.text = item[0].itemLabel
-        
         itemDetail.text = item[0].itemType
-        //print(item)
-        print(item[0].itemLabel)
-        let str = item[0].timeLabel
-        
-            let index = str.startIndex.advancedBy(14)
-            let endIndex = str.endIndex.advancedBy(6)
-            let strResult = str[Range(start: index, end: endIndex)]
-            print(strResult)
-        
-        
-        
+
+        let itemLabelArr = item.first!.timeLabel.characters.split{$0 == " "}.map(String.init)
+        print(itemLabelArr[1])
     }
     
 
