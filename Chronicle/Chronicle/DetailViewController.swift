@@ -11,6 +11,10 @@ import RealmSwift
 
 class DetailViewController: UIViewController {
     @IBOutlet weak var detailImageView: UIImageView!
+    
+    @IBOutlet weak var detailName: UILabel!
+    
+    @IBOutlet weak var itemDetail: UILabel!
     var itemId: String = ""
     
     override func viewDidLoad() {
@@ -25,7 +29,16 @@ class DetailViewController: UIViewController {
     
     func getData() {
         let realm = try! Realm()
-        var item = realm.objects(Item).filter("itemId = '\(itemId)'")
+        let item = realm.objects(Item).filter("itemId = '\(itemId)'")
+        let url = NSURL(string: item[0].thumbnail)
+        
+        detailImageView.sd_setImageWithURL(url, completed: nil)
+        
+        detailName.text = item[0].itemLabel
+        
+        itemDetail.text = item[0].itemType
+        
+        
         print(item[0].itemLabel)
     }
     

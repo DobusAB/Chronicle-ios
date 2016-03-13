@@ -294,7 +294,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vilket län?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MyK-zn-PBO">
-                                                <rect key="frame" x="262" y="47" width="76" height="20"/>
+                                                <rect key="frame" x="40" y="47" width="520" height="20"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                                 <color key="textColor" red="0.29306891025641024" green="0.29306891025641024" blue="0.29306891025641024" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -303,11 +303,21 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="MyK-zn-PBO" firstAttribute="top" secondItem="8Mp-db-2w2" secondAttribute="bottom" constant="5" id="0aW-bx-bM8"/>
+                                            <constraint firstAttribute="trailing" secondItem="MyK-zn-PBO" secondAttribute="trailing" constant="40" id="8cQ-Ru-m0H"/>
                                             <constraint firstAttribute="height" constant="200" id="H6A-vG-W4R"/>
                                             <constraint firstItem="8Mp-db-2w2" firstAttribute="top" secondItem="4eu-B8-PSm" secondAttribute="top" constant="20" id="KTy-iF-piJ"/>
+                                            <constraint firstItem="MyK-zn-PBO" firstAttribute="leading" secondItem="4eu-B8-PSm" secondAttribute="leading" constant="4" id="TC1-Mc-2TM"/>
+                                            <constraint firstAttribute="trailing" secondItem="MyK-zn-PBO" secondAttribute="trailing" constant="262" id="eW5-dL-q69"/>
+                                            <constraint firstItem="MyK-zn-PBO" firstAttribute="leading" secondItem="4eu-B8-PSm" secondAttribute="leading" constant="40" id="pGF-ym-1ZX"/>
                                             <constraint firstItem="MyK-zn-PBO" firstAttribute="centerX" secondItem="4eu-B8-PSm" secondAttribute="centerX" id="qKm-PK-SS3"/>
                                             <constraint firstItem="8Mp-db-2w2" firstAttribute="centerX" secondItem="4eu-B8-PSm" secondAttribute="centerX" id="u4e-jQ-UND"/>
                                         </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="TC1-Mc-2TM"/>
+                                                <exclude reference="eW5-dL-q69"/>
+                                            </mask>
+                                        </variation>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -339,6 +349,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="detailImageView" destination="Guw-95-M7N" id="edv-AR-VF4"/>
+                        <outlet property="detailName" destination="8Mp-db-2w2" id="Cia-SK-9ZG"/>
+                        <outlet property="itemDetail" destination="MyK-zn-PBO" id="QQi-Qv-0Ga"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tu3-8a-R73" userLabel="First Responder" sceneMemberID="firstResponder"/>
