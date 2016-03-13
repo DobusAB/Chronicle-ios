@@ -262,10 +262,10 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xWf-Rk-OJF">
                                                 <rect key="frame" x="240" y="30" width="120" height="130"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="Guw-95-M7N">
-                                                        <rect key="frame" x="10" y="10" width="100" height="70"/>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="Guw-95-M7N">
+                                                        <rect key="frame" x="10" y="10" width="100" height="100"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="70" id="CDu-SM-5ul"/>
+                                                            <constraint firstAttribute="height" constant="100" id="CDu-SM-5ul"/>
                                                             <constraint firstAttribute="width" constant="100" id="gdj-7E-U4h"/>
                                                         </constraints>
                                                     </imageView>
