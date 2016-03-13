@@ -10,7 +10,6 @@ import UIKit
 import pop
 
 class TreasureViewController: UIViewController, UIDynamicAnimatorDelegate{
-
     @IBOutlet weak var modalContainer: UIView!
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var treasurechest: UIImageView!
@@ -22,9 +21,9 @@ class TreasureViewController: UIViewController, UIDynamicAnimatorDelegate{
     var gravity: UIGravityBehavior!
     var animator: UIDynamicAnimator!
     var collision: UICollisionBehavior!
+    var item = Item()
     
     override func viewWillAppear(animated: Bool) {
-        
         treasurechest.userInteractionEnabled = true
         let tapRecognizer = UITapGestureRecognizer(target: self, action: Selector("imageTapped:"))
         treasurechest.addGestureRecognizer(tapRecognizer)
@@ -47,7 +46,15 @@ class TreasureViewController: UIViewController, UIDynamicAnimatorDelegate{
         //dismiss it, animate it off screen, whatever.
         print("Opened Chest")
         let imageName = "spaceship.pdf"
-        let image = UIImage(named: imageName)
+        var image = UIImage(named: imageName)
+        let url = NSURL(string: item.thumbnail)
+        
+        if item.thumbnail.isEmpty {
+            image = UIImage(named: "treasure-closed")
+        } else {
+            //image = url
+        }
+        
         let imageView = UIImageView(image: image!)
         self.treasurechest.addSubview(imageView)
         imageView.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
@@ -84,9 +91,10 @@ class TreasureViewController: UIViewController, UIDynamicAnimatorDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print(item)
+        
         treasurechest.layer.position.x = modalContainer.frame.midX/2 + 5
         treasurechest.layer.position.y = modalContainer.frame.midY - 700
-        
         
         animator = UIDynamicAnimator(referenceView: modalContainer)
         gravity = UIGravityBehavior(items: [treasurechest])

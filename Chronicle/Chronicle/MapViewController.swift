@@ -28,7 +28,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         //mapView.setRegion(region, animated: true)
         
         let realm = try! Realm()
-        let items = realm.objects(Item)
+        let items = realm.objects(Item).filter("discovered = false")
         var annotations = [MKPointAnnotation]()
         let user = realm.objects(User).first
         
@@ -79,6 +79,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                 let vc = self.storyboard?.instantiateViewControllerWithIdentifier("TreasureViewController") as! TreasureViewController
                 vc.modalPresentationStyle = UIModalPresentationStyle.Custom
                 vc.transitioningDelegate = treasureTransitionmanager
+                vc.item = item!
                 self.presentViewController(vc, animated: true, completion: nil)
             }
         }
