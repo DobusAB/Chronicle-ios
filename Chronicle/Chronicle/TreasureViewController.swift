@@ -8,6 +8,7 @@
 
 import UIKit
 import pop
+import SDWebImage
 
 class TreasureViewController: UIViewController, UIDynamicAnimatorDelegate{
     @IBOutlet weak var modalContainer: UIView!
@@ -48,11 +49,20 @@ class TreasureViewController: UIViewController, UIDynamicAnimatorDelegate{
         let imageName = "spaceship.pdf"
         var image = UIImage(named: imageName)
         let url = NSURL(string: item.thumbnail)
-        
+        var imageDownloader = SDWebImageDownloader()
         if item.thumbnail.isEmpty {
-            image = UIImage(named: "treasure-closed")
+            image = UIImage(named: "image-placeholder")
         } else {
             //image = url
+            imageDownloader.downloadImageWithURL(
+                NSURL(string: item.thumbnail),
+                options: SDWebImageDownloaderOptions.UseNSURLCache,
+                progress: nil,
+                completed: { (img, data, error, bool) -> Void in
+                    if img != nil {
+                        image = img
+                    }
+            })
         }
         
         let imageView = UIImageView(image: image!)

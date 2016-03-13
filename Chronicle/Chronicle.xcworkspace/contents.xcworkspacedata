@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:jakobs.gpx">
+   </FileRef>
+   <FileRef
       location = "group:officersflygeln.gpx">
    </FileRef>
    <FileRef
