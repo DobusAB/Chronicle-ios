@@ -28,22 +28,12 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="subtitleKeyPath" value="itemType"/>
                                 </userDefinedRuntimeAttributes>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bTe-yt-3ca">
-                                <rect key="frame" x="277" y="271" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="openTreasureModal:" destination="9pv-A4-QxB" eventType="touchUpInside" id="RcJ-f6-UVp"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="bTe-yt-3ca" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" id="5bf-Aq-MY4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="mAZ-Bi-4eB" secondAttribute="trailing" id="EWW-3B-ema"/>
                             <constraint firstItem="mAZ-Bi-4eB" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="PnR-hR-4iw"/>
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="mAZ-Bi-4eB" secondAttribute="bottom" id="QcU-XF-QUv"/>
-                            <constraint firstItem="bTe-yt-3ca" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="VgM-mf-CIK"/>
                             <constraint firstItem="mAZ-Bi-4eB" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="ZgT-0Q-qyz"/>
                             <constraint firstAttribute="trailing" secondItem="mAZ-Bi-4eB" secondAttribute="trailing" id="eNf-f0-Ova"/>
                             <constraint firstItem="mAZ-Bi-4eB" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="p4y-qi-ZE5"/>
@@ -351,6 +341,7 @@
                         <outlet property="detailImageView" destination="Guw-95-M7N" id="edv-AR-VF4"/>
                         <outlet property="detailInfoContainer" destination="4eu-B8-PSm" id="v1m-t6-0cw"/>
                         <outlet property="detailName" destination="8Mp-db-2w2" id="Cia-SK-9ZG"/>
+                        <outlet property="detailPhotoBg" destination="dWD-7x-Tc8" id="XX0-bW-D31"/>
                         <outlet property="itemDetail" destination="MyK-zn-PBO" id="QQi-Qv-0Ga"/>
                     </connections>
                 </viewController>

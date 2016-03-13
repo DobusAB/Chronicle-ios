@@ -68,14 +68,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
     }
     
-    
-    @IBAction func openTreasureModal(sender: AnyObject) {
-        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("TreasureViewController") as! TreasureViewController
-        vc.modalPresentationStyle = UIModalPresentationStyle.Custom
-        vc.transitioningDelegate = treasureTransitionmanager
-        self.presentViewController(vc, animated: true, completion: nil)
-    }
-    
     func tresureFound(itemId: String) {
         let realm = try! Realm()
         let item = realm.objects(Item).filter("itemId == '\(itemId)'").first

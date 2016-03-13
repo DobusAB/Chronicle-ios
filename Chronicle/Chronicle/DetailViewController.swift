@@ -14,6 +14,8 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var detailName: UILabel!
     @IBOutlet weak var detailInfoContainer: UIView!
+    @IBOutlet weak var detailPhotoBg: UIView!
+    let primaryBlue = UIColor(red:0.22, green:0.52, blue:0.91, alpha:1.0)
     
     @IBOutlet weak var itemDetail: UILabel!
     var itemId: String = ""
@@ -21,10 +23,11 @@ class DetailViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         
-        detailInfoContainer.layer.shadowOffset = CGSizeMake(0, -10)
+        detailInfoContainer.layer.shadowOffset = CGSizeMake(0, -5)
         detailInfoContainer.layer.shadowRadius = 5
-        detailInfoContainer.layer.shadowOpacity = 0.25
+        detailInfoContainer.layer.shadowOpacity = 0.15
         detailInfoContainer.layer.shadowColor = UIColor.blackColor().CGColor
+        detailPhotoBg.backgroundColor = primaryBlue
         
     }
     
