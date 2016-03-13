@@ -46,9 +46,17 @@ class DetailViewController: UIViewController {
         let item = realm.objects(Item).filter("itemId = '\(itemId)'")
         let url = NSURL(string: item[0].thumbnail)
         
-        detailImageView.sd_setImageWithURL(url, completed: nil)
-        detailName.text = item[0].itemLabel
-        itemDetail.text = item[0].itemType
+        print(url)
+        
+        if url == "" {
+            detailImageView.image = UIImage(named: "bot_face")
+        }
+        else {
+            detailImageView.sd_setImageWithURL(url, completed: nil)
+        }
+
+        detailName.text = item[0].itemLabel.capitalizedString
+        itemDetail.text = item[0].itemType.capitalizedString
 
         let itemLabelArr = item.first!.timeLabel.characters.split{$0 == " "}.map(String.init)
         print(itemLabelArr[1])

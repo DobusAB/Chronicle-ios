@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="I8n-WH-Z3D">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="R6i-aX-6P6">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -161,6 +161,23 @@
                                                         </mask>
                                                     </variation>
                                                 </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ydd-mC-2Yo">
+                                                    <rect key="frame" x="18" y="118" width="114" height="25"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="1834" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jup-qn-8um">
+                                                            <rect key="frame" x="45" y="4" width="37" height="18"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.36930184665224264" green="0.51528726147624482" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="LQ6-WL-ONC"/>
+                                                        <constraint firstItem="Jup-qn-8um" firstAttribute="centerX" secondItem="Ydd-mC-2Yo" secondAttribute="centerX" id="aJV-JU-TCJ"/>
+                                                        <constraint firstItem="Jup-qn-8um" firstAttribute="centerY" secondItem="Ydd-mC-2Yo" secondAttribute="centerY" id="jeN-o9-dm1"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -169,11 +186,16 @@
                                             <constraint firstAttribute="trailing" secondItem="raP-oA-BSe" secondAttribute="trailing" constant="10" id="BdX-PC-ge5"/>
                                             <constraint firstItem="raP-oA-BSe" firstAttribute="top" secondItem="3sE-Rz-PB4" secondAttribute="top" constant="10" id="KOj-0V-rKs"/>
                                             <constraint firstAttribute="bottom" secondItem="raP-oA-BSe" secondAttribute="bottom" id="aJB-3T-Alu"/>
+                                            <constraint firstItem="Ydd-mC-2Yo" firstAttribute="leading" secondItem="3sE-Rz-PB4" secondAttribute="leading" constant="18" id="fRq-g1-fMz"/>
+                                            <constraint firstAttribute="bottom" secondItem="Ydd-mC-2Yo" secondAttribute="bottom" constant="7" id="rMq-bp-u8A"/>
+                                            <constraint firstAttribute="trailing" secondItem="Ydd-mC-2Yo" secondAttribute="trailing" constant="18" id="tOh-2R-reQ"/>
                                             <constraint firstItem="raP-oA-BSe" firstAttribute="leading" secondItem="3sE-Rz-PB4" secondAttribute="leading" constant="10" id="zZb-o5-asU"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="ItemImage" destination="Lf3-N3-uqq" id="1bj-Eq-j6t"/>
                                             <outlet property="photoBg" destination="raP-oA-BSe" id="Of4-79-j1m"/>
+                                            <outlet property="yearLabel" destination="Ydd-mC-2Yo" id="OuW-AB-dJ6"/>
+                                            <outlet property="yearText" destination="Jup-qn-8um" id="tn8-Vv-qy0"/>
                                             <segue destination="djb-2V-dH1" kind="push" identifier="detailSegue" id="vIx-sz-i2z"/>
                                         </connections>
                                     </collectionViewCell>

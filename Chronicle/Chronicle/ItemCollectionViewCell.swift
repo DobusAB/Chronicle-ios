@@ -11,4 +11,6 @@ import UIKit
 class ItemCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var ItemImage: UIImageView!
     @IBOutlet weak var photoBg: UIView!
+    @IBOutlet weak var yearLabel: UIView!
+    @IBOutlet weak var yearText: UILabel!
 }

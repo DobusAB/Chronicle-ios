@@ -51,6 +51,7 @@ class InventoryViewController: UIViewController, UICollectionViewDataSource, UIC
         userImage.clipsToBounds = true
         userImage.layer.borderColor = UIColor.blackColor().CGColor
         userImage.layer.borderWidth = 5.0
+        
     }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -67,10 +68,14 @@ class InventoryViewController: UIViewController, UICollectionViewDataSource, UIC
         
         cell.ItemImage.layer.cornerRadius = 3
         cell.ItemImage.clipsToBounds = true;
+        cell.yearLabel.backgroundColor = primaryBlue
+        cell.yearLabel.layer.cornerRadius = 12
+        cell.layer.cornerRadius = 15
         cell.backgroundColor = primaryBlue
         cell.layer.cornerRadius = 4
         cell.photoBg.layer.cornerRadius = 2
-        
+        let itemLabelArr = itemsArray[indexPath.row].timeLabel.characters.split{$0 == " "}.map(String.init)
+        cell.yearText.text = itemLabelArr[1]
         if itemsArray[indexPath.row].thumbnail.isEmpty {
             cell.ItemImage.image = UIImage(named: "treasure-closed")
             return cell
