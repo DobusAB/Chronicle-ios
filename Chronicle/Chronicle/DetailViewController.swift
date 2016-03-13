@@ -12,6 +12,7 @@ import RealmSwift
 class DetailViewController: UIViewController {
     @IBOutlet weak var detailImageView: UIImageView!
     
+    @IBOutlet weak var itemDescriptionLabel: UILabel!
     @IBOutlet weak var detailYearLabel: UILabel!
     @IBOutlet weak var detailName: UILabel!
     @IBOutlet weak var detailInfoContainer: UIView!
@@ -78,7 +79,7 @@ class DetailViewController: UIViewController {
         print(url)
         
         if url == "" {
-            detailImageView.image = UIImage(named: "bot_face")
+            detailImageView.image = UIImage(named: "image-placeholder")
         }
         else {
             detailImageView.sd_setImageWithURL(url, completed: nil)
@@ -86,6 +87,7 @@ class DetailViewController: UIViewController {
 
         detailName.text = item[0].itemLabel.capitalizedString
         itemDetail.text = item[0].itemType.capitalizedString
+        itemDescriptionLabel.text = item[0].itemDescription.capitalizedString
 
         let itemLabelArr = item.first!.timeLabel.characters.split{$0 == " "}.map(String.init)
         detailYearLabel.text = itemLabelArr[1]

@@ -508,7 +508,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beskrivning" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z4a-AS-gYe">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beskrivning" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z4a-AS-gYe">
                                                 <rect key="frame" x="40" y="77" width="520" height="20"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                                 <nil key="highlightedColor"/>
@@ -634,6 +634,7 @@
                         <outlet property="detailSmallLabel" destination="SFe-4C-qIL" id="g7c-1N-mvu"/>
                         <outlet property="detailSmallLabelText" destination="Gpc-GJ-Je4" id="g6w-DY-TIt"/>
                         <outlet property="detailYearLabel" destination="mUw-PA-uRl" id="JUE-gu-22R"/>
+                        <outlet property="itemDescriptionLabel" destination="Z4a-AS-gYe" id="LoF-hi-4Og"/>
                         <outlet property="itemDetail" destination="MyK-zn-PBO" id="QQi-Qv-0Ga"/>
                         <outlet property="yearText" destination="Swe-FP-Mkp" id="vPY-Lc-9BK"/>
                     </connections>

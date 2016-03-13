@@ -77,7 +77,7 @@ class InventoryViewController: UIViewController, UICollectionViewDataSource, UIC
         let itemLabelArr = itemsArray[indexPath.row].timeLabel.characters.split{$0 == " "}.map(String.init)
         cell.yearText.text = itemLabelArr[1]
         if itemsArray[indexPath.row].thumbnail.isEmpty {
-            cell.ItemImage.image = UIImage(named: "treasure-closed")
+            cell.ItemImage.image = UIImage(named: "image-placeholder")
             return cell
         } else {
             cell.ItemImage.sd_setImageWithURL(url, completed: nil)
