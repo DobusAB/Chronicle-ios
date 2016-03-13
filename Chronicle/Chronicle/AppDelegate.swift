@@ -48,9 +48,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 for user in usersDictionary {
                     let childM = ChildMortality()
                     childM.year = user["key"]![1] as! String
-                    if let cD = user["values"]![0] as? String {
+                    /*if let cD = user["values"]![0] as? String {
                         childM.deathCount = cD
-                    }
+                    }*/
+                    childM.deathCount = user["values"]![0] as! String
+                    print(childM.deathCount)
                     
                     //Save item to realm if item has long/lat
                     do {
@@ -67,6 +69,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } catch {
             // Handle error
         }
+        
+         let realm = try! Realm()
+        let childMortality = realm.objects(ChildMortality)
+        //childrenThen.text = childMortality.deathCount
+        print(childMortality)
         
         /*var ages: AnyObject?
         do {

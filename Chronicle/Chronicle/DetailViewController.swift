@@ -71,6 +71,9 @@ class DetailViewController: UIViewController {
         let realm = try! Realm()
         let item = realm.objects(Item).filter("itemId = '\(itemId)'")
         let url = NSURL(string: item[0].thumbnail)
+        let childMortality = realm.objects(ChildMortality)
+        //childrenThen.text = childMortality.deathCount
+        print(childMortality)
         
         print(url)
         
@@ -88,6 +91,7 @@ class DetailViewController: UIViewController {
         detailYearLabel.text = itemLabelArr[1]
         detailSmallLabelText.text = itemLabelArr[1]
         yearText.text = itemLabelArr[1]
+        
     }
     
 
