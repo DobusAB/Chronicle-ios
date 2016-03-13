@@ -17,6 +17,7 @@ class InventoryViewController: UIViewController, UICollectionViewDataSource, UIC
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var collectionVIew: UICollectionView!
     @IBOutlet weak var itemImage: UIImageView!
+    let primaryBlue = UIColor(red:0.22, green:0.52, blue:0.91, alpha:1.0)
     
     override func viewWillAppear(animated: Bool) {
         itemsArray.removeAll()
@@ -66,7 +67,7 @@ class InventoryViewController: UIViewController, UICollectionViewDataSource, UIC
         
         cell.ItemImage.layer.cornerRadius = 3
         cell.ItemImage.clipsToBounds = true;
-        cell.backgroundColor = UIColor(red:0.79, green:0.79, blue:0.79, alpha:1.0)
+        cell.backgroundColor = primaryBlue
         cell.layer.cornerRadius = 4
         cell.photoBg.layer.cornerRadius = 2
         
@@ -93,7 +94,7 @@ class InventoryViewController: UIViewController, UICollectionViewDataSource, UIC
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSize(width: 105, height: 105)
+        return CGSize(width: 100, height: 100)
     }
     
 
