@@ -166,7 +166,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             item.lat = lat
             item.lng = long
             item.timeLabel = timeLabel!
-            item.discovered = false
             
             //Save item to realm if item has long/lat
             do {
