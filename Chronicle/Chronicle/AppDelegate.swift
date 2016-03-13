@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import SWXMLHash
 import RealmSwift
+import JSON
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -38,6 +39,62 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Tell Realm to use this new configuration object for the default Realm
         Realm.Configuration.defaultConfiguration = config
+        
+        var users: AnyObject?
+        do {
+            users = try JSON.from("barnadodlighet.json")
+            if let usersDictionary = users!["data"] as? [NSDictionary] {
+                //print(usersDictionary["data"]!)
+                for user in usersDictionary {
+                    let childM = ChildMortality()
+                    childM.year = user["key"]![1] as! String
+                    if let cD = user["values"]![0] as? String {
+                        childM.deathCount = cD
+                    }
+                    
+                    //Save item to realm if item has long/lat
+                    do {
+                        let realm = try Realm()
+                        try realm.write() {
+                            realm.add(childM)
+                        }
+                    } catch {
+                        print("Something went wrong with realm!")
+                    }
+                }
+            }
+            
+        } catch {
+            // Handle error
+        }
+        
+        /*var ages: AnyObject?
+        do {
+            ages = try JSON.from("livslangd")
+            if let agesDictionary = ages!["data"] as? [NSDictionary] {
+                //print(usersDictionary["data"]!)
+                for age in agesDictionary {
+                    let yearY = Year()
+                    yearY.year = age["key"]![1] as! String
+                    if let cD = age["values"]![0] as? String {
+                        yearY.age = cD
+                    }
+                    
+                    //Save item to realm if item has long/lat
+                    do {
+                        let realm = try Realm()
+                        try realm.write() {
+                            realm.add(yearY)
+                        }
+                    } catch {
+                        print("Something went wrong with realm!")
+                    }
+                }
+            }
+            
+        } catch {
+            // Handle error
+        }*/
         
         clearRealm()
         initItems()
