@@ -51,9 +51,17 @@ class DetailViewController: UIViewController {
         detailName.text = item[0].itemLabel
         
         itemDetail.text = item[0].itemType
-        
-        
+        //print(item)
         print(item[0].itemLabel)
+        let str = item[0].timeLabel
+        
+            let index = str.startIndex.advancedBy(14)
+            let endIndex = str.endIndex.advancedBy(6)
+            let strResult = str[Range(start: index, end: endIndex)]
+            print(strResult)
+        
+        
+        
     }
     
 
