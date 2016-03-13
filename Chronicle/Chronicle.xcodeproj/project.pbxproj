@@ -11,10 +11,8 @@
 		55055F841C94546D008ABC43 /* CustomPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55055F831C94546D008ABC43 /* CustomPointAnnotation.swift */; };
 		552F641A1C94890600DA62FA /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552F64191C94890600DA62FA /* ItemCollectionViewCell.swift */; };
 		5572ED9C1C950FA800B48335 /* ChildMortality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5572ED9B1C950FA800B48335 /* ChildMortality.swift */; };
-		5572ED9E1C95153F00B48335 /* livslangd.json in Resources */ = {isa = PBXBuildFile; fileRef = 5572ED9D1C95153F00B48335 /* livslangd.json */; };
 		5572EDA01C95159600B48335 /* Year.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5572ED9F1C95159600B48335 /* Year.swift */; };
 		557529311C821C940036FB01 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 557529301C821C940036FB01 /* MapKit.framework */; };
-		55815CE51C950C03000F6E06 /* barnadodlighet.json in Resources */ = {isa = PBXBuildFile; fileRef = 55815CE41C950C03000F6E06 /* barnadodlighet.json */; };
 		5584A38F1C81F25D00494732 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584A38E1C81F25D00494732 /* Item.swift */; };
 		5584A3911C820D2F00494732 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584A3901C820D2F00494732 /* MapViewController.swift */; };
 		55A726881C81E20300C52517 /* data1.xml in Resources */ = {isa = PBXBuildFile; fileRef = 55A726871C81E20300C52517 /* data1.xml */; };
@@ -57,10 +55,8 @@
 		55055F831C94546D008ABC43 /* CustomPointAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPointAnnotation.swift; sourceTree = "<group>"; };
 		552F64191C94890600DA62FA /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		5572ED9B1C950FA800B48335 /* ChildMortality.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildMortality.swift; sourceTree = "<group>"; };
-		5572ED9D1C95153F00B48335 /* livslangd.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = livslangd.json; sourceTree = "<group>"; };
 		5572ED9F1C95159600B48335 /* Year.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Year.swift; sourceTree = "<group>"; };
 		557529301C821C940036FB01 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		55815CE41C950C03000F6E06 /* barnadodlighet.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = barnadodlighet.json; sourceTree = "<group>"; };
 		5584A38E1C81F25D00494732 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		5584A3901C820D2F00494732 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		55A726871C81E20300C52517 /* data1.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = data1.xml; sourceTree = "<group>"; };
@@ -189,8 +185,6 @@
 				B1E561801C676C1E0034C491 /* LaunchScreen.storyboard */,
 				B1E561831C676C1E0034C491 /* Info.plist */,
 				55A726871C81E20300C52517 /* data1.xml */,
-				55815CE41C950C03000F6E06 /* barnadodlighet.json */,
-				5572ED9D1C95153F00B48335 /* livslangd.json */,
 				55055F831C94546D008ABC43 /* CustomPointAnnotation.swift */,
 			);
 			path = Chronicle;
@@ -344,9 +338,7 @@
 			files = (
 				B1E561821C676C1E0034C491 /* LaunchScreen.storyboard in Resources */,
 				B1E5617F1C676C1E0034C491 /* Assets.xcassets in Resources */,
-				5572ED9E1C95153F00B48335 /* livslangd.json in Resources */,
 				B1E5617D1C676C1E0034C491 /* Main.storyboard in Resources */,
-				55815CE51C950C03000F6E06 /* barnadodlighet.json in Resources */,
 				55A726881C81E20300C52517 /* data1.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
