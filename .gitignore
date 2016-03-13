@@ -61,8 +61,5 @@ Carthage/Build
 
 fastlane/report.xml
 fastlane/screenshots
-Chronicle/Högskolan Halmstad.gpx
-
-*.gpx
 
 Chronicle/Podfile.lock
