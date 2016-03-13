@@ -46,16 +46,26 @@ class TreasureViewController: UIViewController, UIDynamicAnimatorDelegate{
         //tappedImageView will be the image view that was tapped.
         //dismiss it, animate it off screen, whatever.
         print("Opened Chest")
-        var image = UIImage()
+        let imageName = "spaceship.pdf"
+        var image = UIImage(named: imageName)
         let url = NSURL(string: item.thumbnail)
+        var imageDownloader = SDWebImageDownloader()
         if item.thumbnail.isEmpty {
-            image = UIImage(named: "image-placeholder")!
+            image = UIImage(named: "image-placeholder")
         } else {
-            let data = NSData(contentsOfURL: url!)
-            image = UIImage(data: data!)!
+            //image = url
+            imageDownloader.downloadImageWithURL(
+                NSURL(string: item.thumbnail),
+                options: SDWebImageDownloaderOptions.UseNSURLCache,
+                progress: nil,
+                completed: { (img, data, error, bool) -> Void in
+                    if img != nil {
+                        image = img
+                    }
+            })
         }
         
-        let imageView = UIImageView(image: image)
+        let imageView = UIImageView(image: image!)
         self.treasurechest.addSubview(imageView)
         imageView.frame = CGRect(x: 0, y: 0, width: 70, height: 70)
         imageView.layer.cornerRadius = 4
