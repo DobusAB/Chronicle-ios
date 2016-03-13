@@ -45,6 +45,11 @@ class InventoryViewController: UIViewController, UICollectionViewDataSource, UIC
         var user = realm.objects(User).first!
         var imgData = NSData(contentsOfFile: user.image)
         userImage.image = UIImage(data: imgData!)
+        
+        userImage.layer.cornerRadius = userImage.frame.size.width/2
+        userImage.clipsToBounds = true
+        userImage.layer.borderColor = UIColor.blackColor().CGColor
+        userImage.layer.borderWidth = 5.0
     }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {

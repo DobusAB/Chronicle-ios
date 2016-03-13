@@ -106,7 +106,7 @@
                                             <constraint firstAttribute="height" constant="10" id="cDF-3O-UGA"/>
                                         </constraints>
                                     </progressView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kk1-nz-cju">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kk1-nz-cju">
                                         <rect key="frame" x="55" y="30" width="65" height="65"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="65" id="Pl1-Qy-vYB"/>
